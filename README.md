@@ -4,6 +4,8 @@ This is a list of implementations of deep learning methods to biology, originall
 
 Please, contribute to this growing list, especially in categories that I haven't covered well! Also, do add your contributions to [GitXiv](http://gitxiv.com/) as well if you can.
 
+You might also want to refer to the [awesome deepbio](https://github.com/gokceneraslan/awesome-deepbio) list.
+
 ## Cheminformatics
 
 **Neural graph fingerprints** [[github](https://github.com/HIPS/neural-fingerprint)][[gitxiv](http://gitxiv.com/posts/DFtFytneou3SXLuSM/convolutional-networks-on-graphs-for-learning-molecular)]
@@ -84,6 +86,10 @@ This implementation uses a stacked autoencoder with a supervised layer on top of
 [[code](https://github.com/eiriniar/CellCnn)][[paper](http://biorxiv.org/content/early/2016/03/31/046508)]
 
 This is a convolutional network (Lasagne/Theano) based approach for “Representation Learning for detection of phenotype-associated cell subsets.” It is interesting because most neural network approaches for high-dimensional molecular measurements (such as those in the gene expression category above) have used autoencoders rather than convolutional nets.
+
+**DeepCyTOF: Automated Cell Classification of Mass Cytometry Data by Deep Learning and Domain Adaptation**[[paper(http://biorxiv.org/content/biorxiv/early/2016/05/31/054411.full.pdf)]]
+
+Describes autoencoder approaches (stacked AE and multi-AE) to gating (assigning cells into discrete groups) with mass cytometry (CyTOF).
 
 ### Population genetics
 
