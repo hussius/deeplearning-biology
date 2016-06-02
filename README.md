@@ -93,6 +93,8 @@ No implementation available yet but says an open-source one will be made availab
 
 ## Neuroscience
 
+There are potentially lots of implementations that could go here.
+
 **Deep learning for neuroimaging: a validation study** [[paper](http://journal.frontiersin.org/article/10.3389/fnins.2014.00229/abstract)]
 
 **SPINDLE: SPINtronic deep learning engine for large-scale neuromorphic computing** [[paper](http://dl.acm.org/citation.cfm?id=2627625)]
