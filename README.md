@@ -6,6 +6,14 @@ Please, contribute to this growing list, especially in categories that I haven't
 
 You might also want to refer to the [awesome deepbio](https://github.com/gokceneraslan/awesome-deepbio) list.
 
+## Reviews
+
+These are not implementations as such, but contain useful pointers.
+
+**Deep learning for computational biology ** [[open access paper](http://msb.embopress.org/content/12/7/878)]
+
+This is a very nice review of deep learning applications in biology. It primarily deals with convolutional networks and explains well why and how they are used for sequence (and image) classification. 
+
 ## Cheminformatics
 
 **Neural graph fingerprints** [[github](https://github.com/HIPS/neural-fingerprint)][[gitxiv](http://gitxiv.com/posts/DFtFytneou3SXLuSM/convolutional-networks-on-graphs-for-learning-molecular)]
