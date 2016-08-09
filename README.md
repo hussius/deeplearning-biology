@@ -10,7 +10,7 @@ You might also want to refer to the [awesome deepbio](https://github.com/gokcene
 
 These are not implementations as such, but contain useful pointers.
 
-**Deep learning for computational biology ** [[open access paper](http://msb.embopress.org/content/12/7/878)]
+**Deep learning for computational biology** [[open access paper](http://msb.embopress.org/content/12/7/878)]
 
 This is a very nice review of deep learning applications in biology. It primarily deals with convolutional networks and explains well why and how they are used for sequence (and image) classification. 
 
