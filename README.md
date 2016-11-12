@@ -119,9 +119,7 @@ Describes autoencoder approaches (stacked AE and multi-AE) to gating (assigning 
 
 ### Population genetics
 
-**Deep learning for population genetic inference** [[paper](http://biorxiv.org/content/early/2015/10/02/028175.full-text.pdf+html)]
-
-No implementation available yet but says an open-source one will be made available soon.
+**Deep learning for population genetic inference** [[code](https://sourceforge.net/projects/evonet/)][[paper](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004845)]
 
 ## Neuroscience
 
