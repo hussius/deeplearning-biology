@@ -20,7 +20,7 @@ This is a very nice review of deep learning applications in biology. It primaril
 
 A convolutional net that can learn features which are useful for predicting properties of novel molecules; “molecular fingerprints”. The net works on a graph where atoms are nodes and bonds are edges. Developed by the group of Ryan Adams, who co-hosts the very good [Talking Machines](http://www.thetalkingmachines.com/) podcast.
 
-**Deep-learning models for Drug Discovery and Quantum Chemistry** [[github](https://github.com/deepchem/deepchem)][[Python library][(http://deepchem.io/)[[preprint](https://arxiv.org/abs/1611.03199)]
+**Deep-learning models for Drug Discovery and Quantum Chemistry** [[github](https://github.com/deepchem/deepchem)][[Python library](http://deepchem.io/)][[preprint](https://arxiv.org/abs/1611.03199)]
 
 This is a "... [P]ython library that aims to make the use of machine-learning in drug discovery straightforward and convenient" which checks a lot of boxes when it comes to advanced is deep learning: one-shot learning, graph convolutional networks, learning from less data, and LSTM embeddings. According to the GitHub site, "DeepChem aims to provide a high quality open-source toolchain that democratizes the use of deep-learning in drug discovery, materials science, and quantum chemistry."  
 
