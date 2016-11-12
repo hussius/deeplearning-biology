@@ -106,6 +106,13 @@ Identification of potential long non-coding RNA molecules from DNA sequence, bas
 
 This implementation uses a stacked autoencoder with a supervised layer on top of it to predict whether a certain type of genomic region called “CpG islands” (stretches with an overrepresentation of a sequence pattern where a C nucleotide is followed by a G) is methylated (a chemical modification to DNA that can modify its function, for instance methylation in the vicinity of a gene is often but not always related to the down-regulation or silencing of that gene.) This paper uses a network structure where the hidden layers in the autoencoder part have a much larger number of nodes than the input layer, so it would have been nice to read the authors’ thoughts on what the hidden layers represent.
 
+###Data integration
+
+**FIDDLE: An integrative deep learning framework for functional genomic data inference** [[preprint](http://biorxiv.org/content/early/2016/10/17/081380)][[github](https://github.com/ueser/fiddle)][[presentation](https://www.youtube.com/watch?v=pcLTUsOm5pc&feature=youtu.be&list=PLlMMtlgw6qNjROoMNTBQjAcdx53kV50cS&t=2411)]
+
+FIDDLE stands for Flexible Integration of Data with Deep LEarning. The idea (nicely explained by the author in the YouTube video above) is to model several genomic signals jointly using convolutional networks. This could be for example DNase-seq, ATAC-seq, ChIP-seq, TSS-seq, maybe RNA-seq signals (as in .wig files with one value per base in the genome). 
+
+
 ### Single-cell applications
 
 **CellCnn – Representation Learning for detection of disease-associated cell subsets**
