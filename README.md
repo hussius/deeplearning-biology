@@ -14,7 +14,7 @@ These are not implementations as such, but contain useful pointers.
 
 This is a very nice review of deep learning applications in biology. It primarily deals with convolutional networks and explains well why and how they are used for sequence (and image) classification. 
 
-**Deep learning for health informatics** [[open access paper]](http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7801947)]
+**Deep learning for health informatics** [[open access paper](http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7801947)]
 
 An overview of several types of deep nets and their applications in translational bioinformatics, medical imaging, "pervasive sensing", medical data and public health.  
 
