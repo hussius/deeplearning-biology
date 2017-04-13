@@ -6,19 +6,33 @@ Please, contribute to this growing list, especially in categories that I haven't
 
 You might also want to refer to the [awesome deepbio](https://github.com/gokceneraslan/awesome-deepbio) list.
 
-## Reviews
+## Table of contents
+* [Reviews](#reviews)
+* [Chemoinformatics and drug discovery](#chemo)
+* [Proteomics](#proteomics)
+* [Generic 'omics tools](#omics)
+* [Genomics](#genomics)
+  - [Gene expression](#genomics_expression)
+  - [Predicting enhancers and regulatory elements](#genomics_enhancers)
+  - [Methylation](#genomics_methylation)
+  - [Single-cell applications](#genomics_single-cell)
+  - [Non-coding RNA](#genomics_non-coding)
+  - [Population genetics](#genomics_pop)
+* [Neuroscience](#neuro)
+
+## Reviews <a name="reviews"></a>
 
 These are not implementations as such, but contain useful pointers.
 
 **Deep learning for computational biology** [[open access paper](http://msb.embopress.org/content/12/7/878)]
 
-This is a very nice review of deep learning applications in biology. It primarily deals with convolutional networks and explains well why and how they are used for sequence (and image) classification. 
+This is a very nice review of deep learning applications in biology. It primarily deals with convolutional networks and explains well why and how they are used for sequence (and image) classification.
 
 **Deep learning for health informatics** [[open access paper](http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7801947)]
 
-An overview of several types of deep nets and their applications in translational bioinformatics, medical imaging, "pervasive sensing", medical data and public health.  
+An overview of several types of deep nets and their applications in translational bioinformatics, medical imaging, "pervasive sensing", medical data and public health.
 
-## Cheminformatics and drug discovery
+## Chemoinformatics and drug discovery <a name="chemo"></a>
 
 **Neural graph fingerprints** [[github](https://github.com/HIPS/neural-fingerprint)][[gitxiv](http://gitxiv.com/posts/DFtFytneou3SXLuSM/convolutional-networks-on-graphs-for-learning-molecular)]
 
@@ -26,25 +40,25 @@ A convolutional net that can learn features which are useful for predicting prop
 
 **Deep-learning models for Drug Discovery and Quantum Chemistry** [[github](https://github.com/deepchem/deepchem)][[Python library](http://deepchem.io/)][[preprint](https://arxiv.org/abs/1611.03199)]
 
-This is a "... [P]ython library that aims to make the use of machine-learning in drug discovery straightforward and convenient" which checks a lot of boxes when it comes to advanced is deep learning: one-shot learning, graph convolutional networks, learning from less data, and LSTM embeddings. According to the GitHub site, "DeepChem aims to provide a high quality open-source toolchain that democratizes the use of deep-learning in drug discovery, materials science, and quantum chemistry."  
+This is a "... [P]ython library that aims to make the use of machine-learning in drug discovery straightforward and convenient" which checks a lot of boxes when it comes to advanced is deep learning: one-shot learning, graph convolutional networks, learning from less data, and LSTM embeddings. According to the GitHub site, "DeepChem aims to provide a high quality open-source toolchain that democratizes the use of deep-learning in drug discovery, materials science, and quantum chemistry."
 
-## Generic 'omics tools
+## Generic 'omics tools <a name="omics"></a>
 
 **Continuous Distributed Representation of Biological Sequences for Deep Genomics and Deep Proteomics**[[github](https://github.com/ehsanasgari/Deep-Proteomics)][[paper](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0141287)]
 
 The GitHub summary reads: "We introduce a new representation for biological sequences. Named bio-vectors (BioVec) to refer to biological sequences in general with protein-vectors (ProtVec) for proteins (amino-acid sequences) and gene-vectors (GeneVec) for gene sequences, this representation can be widely used in applications of deep learning in proteomics and genomics. Biovectors are basically n-gram character skip-gram wordvectors for biological sequences (DNA, RNA, and Protein). In this work, we have explored biophysical and biochemical meaning of this space. In addition, in variety of bioinformatics tasks we have shown the strength of such a sequence representation."
 
-## Proteomics
+## Proteomics <a name="proteomics"></a>
 
 **Pcons2 – Improved Contact Predictions Using the Recognition of Protein Like Contact Patterns** [[web interface](http://c2.pcons.net/)]
 
 Here, a “deep random forest” with five layers is used to improve predictions of which residues (amino acids) in a protein are physically interacting which each other. This is useful for predicting the overall structure of the protein (a very hard problem.)
 
-## Genomics
+## Genomics <a name="genomics"></a>
 
-This category is divided into several subfields. 
+This category is divided into several subfields.
 
-### Gene expression
+### Gene expression <a name='genomics_expression'></a>
 
 In modeling gene expression, the inputs are typically numerical values (integers or floats) estimating how much RNA is produced from a DNA template in a particular cell type or condition.
 
@@ -64,7 +78,7 @@ This deals with a specific prediction task, namely to predict the expression of 
 
 The authors use stacked autoencoders to learn biological features in yeast from thousands of microarrays. They analyze the hidden layer representations and show that these encode biological information in a hierarchical way, so that for instance transcription factors are represented in the first hidden layer.
 
-### Predicting enhancers and regulatory regions
+### Predicting enhancers and regulatory regions <a name='genomics_enhancers'></a>
 
 Here the inputs are typically “raw” DNA sequence, and convolutional networks (or layers) are often used to learn regularities within the sequence. Hat tip to [Melissa Gymrek](http://melissagymrek.com/science/2015/12/01/unlocking-noncoding-variation.html) for pointing out some of these.
 
@@ -110,22 +124,36 @@ Wyeth Wasserman’s group have made a kind of [toolkit](https://github.com/yifen
 
 **FIDDLE: An integrative deep learning framework for functional genomic data inference** [[paper](http://biorxiv.org/content/early/2016/10/17/081380)][[code](https://github.com/ueser/FIDDLE)[[Youtube talk](https://www.youtube.com/watch?v=pcLTUsOm5pc&feature=youtu.be&list=PLlMMtlgw6qNjROoMNTBQjAcdx53kV50cS&t=2411)]
 
-The group predicted transcription start site and regulatory regions but claims this solution could be easily generalized and predict other features too. FIDDLE stands for Flexible Integration of Data with Deep LEarning. The idea (nicely explained by the author in the YouTube video above) is to model several genomic signals jointly using convolutional networks. This could be for example DNase-seq, ATAC-seq, ChIP-seq, TSS-seq, maybe RNA-seq signals (as in .wig files with one value per base in the genome). 
+The group predicted transcription start site and regulatory regions but claims this solution could be easily generalized and predict other features too. FIDDLE stands for Flexible Integration of Data with Deep LEarning. The idea (nicely explained by the author in the YouTube video above) is to model several genomic signals jointly using convolutional networks. This could be for example DNase-seq, ATAC-seq, ChIP-seq, TSS-seq, maybe RNA-seq signals (as in .wig files with one value per base in the genome).
 
 
-###Non-coding RNA
+### Non-coding RNA <a name='genomics_non-coding'></a>
 
 **DeepLNC, a long non-coding RNA prediction tool using deep neural network** [[paper](http://link.springer.com/article/10.1007%2Fs13721-016-0129-2)] [[web server](http://bioserver.iiita.ac.in/deeplnc/)]
 
 Identification of potential long non-coding RNA molecules from DNA sequence, based on k-mer profiles.
 
-###Methylation
+### Methylation <a name='genomics_methylation'></a>
+
+**DeepCpG - Predicting DNA methylation in single cells**
+[[paper](http://dx.doi.org/10.1186/s13059-017-1189-z)]
+[[code](https://github.com/cangermueller/deepcpg)]
+[[docs](http://deepcpg.readthedocs.io/en/latest/)]
+
+DeepCpG is a deep neural network for predicting DNA methylation in multiple cells. DeepCpG has a modular architecture, consisting of a recurrent CpG module to account for correlations between CpG sites within and across cells, a convolutional DNA module to extract patterns from a wide DNA sequence window, and a Joint module that integrates the evidence from the CpG and DNA module to predict the methylation state of multiple cells for a target CpG site. DeepCpG yields accurate predictions, enables discovering DNA sequence motifs that are associated with DNA methylation states and cell-to-cell variability, and can be used for analyzing the effect of single-nucleotide mutations on DNA methylation. DeepCpG is implemented in Python and publicly available.
 
 **Predicting DNA Methylation State of CpG Dinucleotide Using Genome Topological Features and Deep Networks** [[paper](http://www.nature.com/articles/srep19598)][[web server](http://dna.cs.usm.edu/deepmethyl/)]
 
 This implementation uses a stacked autoencoder with a supervised layer on top of it to predict whether a certain type of genomic region called “CpG islands” (stretches with an overrepresentation of a sequence pattern where a C nucleotide is followed by a G) is methylated (a chemical modification to DNA that can modify its function, for instance methylation in the vicinity of a gene is often but not always related to the down-regulation or silencing of that gene.) This paper uses a network structure where the hidden layers in the autoencoder part have a much larger number of nodes than the input layer, so it would have been nice to read the authors’ thoughts on what the hidden layers represent.
 
-### Single-cell applications
+### Single-cell applications <a name='genomics_single-cell'></a>
+
+**DeepCpG - Predicting DNA methylation in single cells**
+[[paper](http://dx.doi.org/10.1186/s13059-017-1189-z)]
+[[code](https://github.com/cangermueller/deepcpg)]
+[[docs](http://deepcpg.readthedocs.io/en/latest/)]
+
+See above.
 
 **CellCnn – Representation Learning for detection of disease-associated cell subsets**
 [[code](https://github.com/eiriniar/CellCnn)][[paper](http://biorxiv.org/content/early/2016/03/31/046508)]
@@ -136,7 +164,7 @@ This is a convolutional network (Lasagne/Theano) based approach for “Represent
 
 Describes autoencoder approaches (stacked AE and multi-AE) to gating (assigning cells into discrete groups) with mass cytometry (CyTOF).
 
-### Population genetics
+### Population genetics <a name='genomics_pop'></a>
 
 **Deep learning for population genetic inference** [[code](https://sourceforge.net/projects/evonet/)][[paper](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004845)]
 
@@ -144,7 +172,7 @@ Describes autoencoder approaches (stacked AE and multi-AE) to gating (assigning 
 
 This weirdly-named paper addresses the frequently encountered problem in genomics where the number of features is much larger than the number of training examples. Here, it is addressed in the context of SNPs (single-nucleotide polymorphisms, genetic variations between individuals). The authors propose a new network parametrization that reduces the number of free parameters using a multi-task architecture which tries to learn a useful embedding of the input features.
 
-## Neuroscience
+## Neuroscience <a name='neuro'></a>
 
 There are potentially lots of implementations that could go here.
 
