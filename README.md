@@ -8,6 +8,7 @@ You might also want to refer to the [awesome deepbio](https://github.com/gokcene
 
 ## Table of contents
 * [Reviews](#reviews)
+* [General] (#general)
 * [Chemoinformatics and drug discovery](#chemo)
 * [Proteomics](#proteomics)
 * [Generic 'omics tools](#omics)
@@ -35,6 +36,14 @@ This is a very nice review of deep learning applications in biology. It primaril
 **Deep learning for health informatics** [[open access paper](http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7801947)]
 
 An overview of several types of deep nets and their applications in translational bioinformatics, medical imaging, "pervasive sensing", medical data and public health.
+
+## General <a name="general"</a>
+
+Papers on methods that are more widely applicable to biological or clinical data.
+
+**Privacy-preserving generative deep neural networks support clinical data sharing** [Github](https://github.com/greenelab/SPRINT_gan)[[bioRxiv preprint](https://www.biorxiv.org/content/early/2017/11/15/159756)]
+
+This describes a clever idea where generative adversarial networks (GANs) are used to synthesize data that closely resembles actual data measured on study participants, but which cannot be traced back to a specific subject. The latter aspect, called differential privacy, is incorporated into the method by design and gives strong guarantees of the likelihood that a subject could be identified as a member of a trial.
 
 ## Chemoinformatics and drug discovery <a name="chemo"></a>
 
