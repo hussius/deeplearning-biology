@@ -11,6 +11,7 @@ You might also want to refer to the [awesome deepbio](https://github.com/gokcene
 * [General](#general)
 * [Chemoinformatics and drug discovery](#chemo)
 * [Proteomics](#proteomics)
+* [Metabolomics](#metabolomics)
 * [Generic 'omics tools](#omics)
 * [Genomics](#genomics)
   - [Gene expression](#genomics_expression)
@@ -66,6 +67,12 @@ The GitHub summary reads: "We introduce a new representation for biological sequ
 **Pcons2 – Improved Contact Predictions Using the Recognition of Protein Like Contact Patterns** [[web interface](http://c2.pcons.net/)]
 
 Here, a “deep random forest” with five layers is used to improve predictions of which residues (amino acids) in a protein are physically interacting which each other. This is useful for predicting the overall structure of the protein (a very hard problem.)
+
+## Metabolomics <a name="metabolomics"></a>
+
+**Deep Learning Accurately Predicts Estrogen Receptor Status in Breast Cancer Metabolomics Data** [[code](http://pubs.acs.org/doi/suppl/10.1021/acs.jproteome.7b00595/suppl_file/pr7b00595_si_001.pdf)][[paper](http://pubs.acs.org/doi/full/10.1021/acs.jproteome.7b00595)]
+
+Classification algorithms for metabolomics data with respect to estrogen receptor status are compared, and the best performing algorithm is an autoencoder-based feedforward network with parameters tuned using H2O's R interface.
 
 ## Genomics <a name="genomics"></a>
 
