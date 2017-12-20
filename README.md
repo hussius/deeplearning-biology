@@ -37,7 +37,7 @@ This is a very nice review of deep learning applications in biology. It primaril
 
 An overview of several types of deep nets and their applications in translational bioinformatics, medical imaging, "pervasive sensing", medical data and public health.
 
-## General <a name="general"</a>
+## General <a name="general"></a>
 
 Papers on methods that are more widely applicable to biological or clinical data.
 
