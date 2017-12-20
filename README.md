@@ -130,6 +130,9 @@ Wyeth Wasserman’s group have made a kind of [toolkit](https://github.com/yifen
 
 The group predicted transcription start site and regulatory regions but claims this solution could be easily generalized and predict other features too. FIDDLE stands for Flexible Integration of Data with Deep LEarning. The idea (nicely explained by the author in the YouTube video above) is to model several genomic signals jointly using convolutional networks. This could be for example DNase-seq, ATAC-seq, ChIP-seq, TSS-seq, maybe RNA-seq signals (as in .wig files with one value per base in the genome).
 
+**Deep Learning Of The Regulatory Grammar Of Yeast 5′ Untranslated Regions From 500,000 Random Sequences** [[paper](http://genome.cshlp.org/content/27/12/2015)][[code](http://genome.cshlp.org/content/suppl/2017/11/02/gr.224964.117.DC1/Supplemental_code.tar.gz)
+
+This is a CNN model that attempts to predict protein expression from the DNA sequence in a specific type of genomic region called 5' UTR (five-prime untranslated region). The model is built in Keras and a nice touch by the authors is that they optimized the parameters using hyperopt, which is also shown in one of the Jupyter notebooks that comes along with the paper. The results look promising and easily reproducible, judging from my own trial.
 
 ### Non-coding RNA <a name='genomics_non-coding'></a>
 
