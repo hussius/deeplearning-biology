@@ -199,6 +199,10 @@ Tests a variety of neural network architectures for obtaining a reduced represen
 
 Most high-throughput assays in genomics, proteomics etc. are affected to some extent by systematic technical errors, so-called "batch effects". This paper uses a residual neural network to attenuate batch effects by trying to match the distributions of replicate experiments on e.g. single-cell RNA sequencing or mass cytometry. 
 
+**Active deep learning reduces annotation burden in automatic cell segmentation** [[bioRxiv preprint](https://www.biorxiv.org/content/early/2017/11/01/211060)]
+
+Active learning, a framework addressing how to select training examples in order to train a model most efficiently, is shown to significantly reduce the time required by experts to annotate cell segmentation images in high-throughput high-context microscopy. Training deep learning models on this type of application of course requires a lot of high-quality labeled data, but the time of the human experts that can provide the labels (perform annotation) is limited and expensive. 
+
 ### Population genetics <a name='genomics_pop'></a>
 
 **Deep learning for population genetic inference** [[code](https://sourceforge.net/projects/evonet/)][[paper](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004845)]
