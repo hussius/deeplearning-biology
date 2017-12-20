@@ -8,7 +8,7 @@ You might also want to refer to the [awesome deepbio](https://github.com/gokcene
 
 ## Table of contents
 * [Reviews](#reviews)
-* [General] (#general)
+* [General](#general)
 * [Chemoinformatics and drug discovery](#chemo)
 * [Proteomics](#proteomics)
 * [Generic 'omics tools](#omics)
