@@ -76,6 +76,10 @@ Here, a “deep random forest” with five layers is used to improve predictions
 
 The authors use CNNs on feature maps extracted from protein 3D structures in the Protein Data Base (PDB) to predict oncogenes and tumor-suppressor genes.   
 
+**Deep-RBPPred: Predicting RNA binding proteins in the proteome scale based on deep learning** [[code](http://www.rnabinding.com/Deep_RBPPred/Deep-RBPPred.html)][[bioRxiv preprint](https://www.biorxiv.org/content/early/2017/10/27/210153)] 
+
+Predicts RNA-binding proteins using CNNs.
+
 ## Metabolomics <a name="metabolomics"></a>
 
 **Deep Learning Accurately Predicts Estrogen Receptor Status in Breast Cancer Metabolomics Data** [[code](http://pubs.acs.org/doi/suppl/10.1021/acs.jproteome.7b00595/suppl_file/pr7b00595_si_001.pdf)][[paper](http://pubs.acs.org/doi/full/10.1021/acs.jproteome.7b00595)]
@@ -105,6 +109,10 @@ This deals with a specific prediction task, namely to predict the expression of 
 **Learning a hierarchical representation of the yeast transcriptomic machinery using an autoencoder model** [[paper](http://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-015-0852-1)]
 
 The authors use stacked autoencoders to learn biological features in yeast from thousands of microarrays. They analyze the hidden layer representations and show that these encode biological information in a hierarchical way, so that for instance transcription factors are represented in the first hidden layer.
+
+**Boosting Gene Expression Clustering with System-Wide Biological Information: A Robust Autoencoder Approach** [[bioRxiv preprint](https://www.biorxiv.org/content/early/2017/11/05/214122)]
+
+Uses a robust autoencoder (an autoencoder with an outlier filter) to cluster gene expression profiles. 
 
 ### Predicting enhancers and regulatory regions <a name='genomics_enhancers'></a>
 
@@ -161,6 +169,10 @@ This is a CNN model that attempts to predict protein expression from the DNA seq
 **Modeling Enhancer-Promoter Interactions with Attention-Based Neural Networks** [[bioRxiv preprint](https://www.biorxiv.org/content/early/2017/11/14/219667)][[code](https://github.com/wgmao/EPIANN)
 
 The concept of attention in (recurrent) neural networks has become quite popular recently, not least because it has been used to great effect in machine translation models. This paper proposes an attention-based model for getting at the interactions between enhancer sequences and promoter sequences.
+
+**Predicting Transcription Factor Binding Sites with Convolutional Kernel Networks** [[bioRxiv preprint](https://www.biorxiv.org/content/early/2017/11/10/217257)][[code](https://gitlab.inria.fr/dchen/CKN-seq)
+
+This paper uses a hybrid of CNNs (to learn good representations) and kernel methods (to learn good prediction functions) to predict transcription factor binding sites.
 
 ### Non-coding RNA <a name='genomics_non-coding'></a>
 
