@@ -72,6 +72,10 @@ A toolbox for learning motifs from DNA/RNA sequence data using convolutional neu
 
 Here, a “deep random forest” with five layers is used to improve predictions of which residues (amino acids) in a protein are physically interacting which each other. This is useful for predicting the overall structure of the protein (a very hard problem.)
 
+**A Deep Learning Model for Predicting Tumor Suppressor Genes and Oncogenes from PDB Structure** [[github](https://github.com/tavanaei/Cancer-Suppressor-Gene-Deep-Learning)][[bioRxiv preprint](https://www.biorxiv.org/content/early/2017/10/22/177378)]
+
+The authors use CNNs on feature maps extracted from protein 3D structures in the Protein Data Base (PDB) to predict oncogenes and tumor-suppressor genes.   
+
 ## Metabolomics <a name="metabolomics"></a>
 
 **Deep Learning Accurately Predicts Estrogen Receptor Status in Breast Cancer Metabolomics Data** [[code](http://pubs.acs.org/doi/suppl/10.1021/acs.jproteome.7b00595/suppl_file/pr7b00595_si_001.pdf)][[paper](http://pubs.acs.org/doi/full/10.1021/acs.jproteome.7b00595)]
@@ -163,6 +167,10 @@ The concept of attention in (recurrent) neural networks has become quite popular
 **DeepLNC, a long non-coding RNA prediction tool using deep neural network** [[paper](http://link.springer.com/article/10.1007%2Fs13721-016-0129-2)] [[web server](http://bioserver.iiita.ac.in/deeplnc/)]
 
 Identification of potential long non-coding RNA molecules from DNA sequence, based on k-mer profiles.
+
+**A Deep Recurrent Neural Network Discovers Complex Biological Rules to Decipher RNA Protein-Coding Potential** [[github](https://github.com/hendrixlab/mRNN)][[paper](https://www.biorxiv.org/content/early/2017/11/13/200758.1)] 
+
+From the abstract: *While traditional, feature-based methods for RNA classification are limited by current scientific knowledge, deep learning methods can independently discover complex biological rules in the data de novo. We trained a gated recurrent neural network (RNN) on human messenger RNA (mRNA) and long noncoding RNA (lncRNA) sequences. Our model, mRNA RNN (mRNN), surpasses state-of-the-art methods at predicting protein-coding potential.*
 
 ### Methylation <a name='genomics_methylation'></a>
 
