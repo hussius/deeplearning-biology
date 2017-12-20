@@ -41,7 +41,7 @@ An overview of several types of deep nets and their applications in translationa
 
 Papers on methods that are more widely applicable to biological or clinical data.
 
-**Privacy-preserving generative deep neural networks support clinical data sharing** [Github](https://github.com/greenelab/SPRINT_gan)[[bioRxiv preprint](https://www.biorxiv.org/content/early/2017/11/15/159756)]
+**Privacy-preserving generative deep neural networks support clinical data sharing** [[Github](https://github.com/greenelab/SPRINT_gan)][[bioRxiv preprint](https://www.biorxiv.org/content/early/2017/11/15/159756)]
 
 This describes a clever idea where generative adversarial networks (GANs) are used to synthesize data that closely resembles actual data measured on study participants, but which cannot be traced back to a specific subject. The latter aspect, called differential privacy, is incorporated into the method by design and gives strong guarantees of the likelihood that a subject could be identified as a member of a trial.
 
@@ -142,6 +142,10 @@ The group predicted transcription start site and regulatory regions but claims t
 **Deep Learning Of The Regulatory Grammar Of Yeast 5′ Untranslated Regions From 500,000 Random Sequences** [[paper](http://genome.cshlp.org/content/27/12/2015)][[code](http://genome.cshlp.org/content/suppl/2017/11/02/gr.224964.117.DC1/Supplemental_code.tar.gz)
 
 This is a CNN model that attempts to predict protein expression from the DNA sequence in a specific type of genomic region called 5' UTR (five-prime untranslated region). The model is built in Keras and a nice touch by the authors is that they optimized the parameters using hyperopt, which is also shown in one of the Jupyter notebooks that comes along with the paper. The results look promising and easily reproducible, judging from my own trial.
+
+**Modeling Enhancer-Promoter Interactions with Attention-Based Neural Networks** [[bioRxiv preprint](https://www.biorxiv.org/content/early/2017/11/14/219667)][[code](https://github.com/wgmao/EPIANN)
+
+The concept of attention in (recurrent) neural networks has become quite popular recently, not least because it has been used to great effect in machine translation models. This paper proposes an attention-based model for getting at the interactions between enhancer sequences and promoter sequences.
 
 ### Non-coding RNA <a name='genomics_non-coding'></a>
 
