@@ -162,17 +162,22 @@ Wyeth Wasserman’s group have made a kind of [toolkit](https://github.com/yifen
 
 The group predicted transcription start site and regulatory regions but claims this solution could be easily generalized and predict other features too. FIDDLE stands for Flexible Integration of Data with Deep LEarning. The idea (nicely explained by the author in the YouTube video above) is to model several genomic signals jointly using convolutional networks. This could be for example DNase-seq, ATAC-seq, ChIP-seq, TSS-seq, maybe RNA-seq signals (as in .wig files with one value per base in the genome).
 
-**Deep Learning Of The Regulatory Grammar Of Yeast 5′ Untranslated Regions From 500,000 Random Sequences** [[paper](http://genome.cshlp.org/content/27/12/2015)][[code](http://genome.cshlp.org/content/suppl/2017/11/02/gr.224964.117.DC1/Supplemental_code.tar.gz)
+**Deep Learning Of The Regulatory Grammar Of Yeast 5′ Untranslated Regions From 500,000 Random Sequences** [[paper](http://genome.cshlp.org/content/27/12/2015)][[code](http://genome.cshlp.org/content/suppl/2017/11/02/gr.224964.117.DC1/Supplemental_code.tar.gz)]
 
 This is a CNN model that attempts to predict protein expression from the DNA sequence in a specific type of genomic region called 5' UTR (five-prime untranslated region). The model is built in Keras and a nice touch by the authors is that they optimized the parameters using hyperopt, which is also shown in one of the Jupyter notebooks that comes along with the paper. The results look promising and easily reproducible, judging from my own trial.
 
-**Modeling Enhancer-Promoter Interactions with Attention-Based Neural Networks** [[bioRxiv preprint](https://www.biorxiv.org/content/early/2017/11/14/219667)][[code](https://github.com/wgmao/EPIANN)
+**Modeling Enhancer-Promoter Interactions with Attention-Based Neural Networks** [[bioRxiv preprint](https://www.biorxiv.org/content/early/2017/11/14/219667)][[code](https://github.com/wgmao/EPIANN)]
 
 The concept of attention in (recurrent) neural networks has become quite popular recently, not least because it has been used to great effect in machine translation models. This paper proposes an attention-based model for getting at the interactions between enhancer sequences and promoter sequences.
 
-**Predicting Transcription Factor Binding Sites with Convolutional Kernel Networks** [[bioRxiv preprint](https://www.biorxiv.org/content/early/2017/11/10/217257)][[code](https://gitlab.inria.fr/dchen/CKN-seq)
+**Predicting Transcription Factor Binding Sites with Convolutional Kernel Networks** [[bioRxiv preprint](https://www.biorxiv.org/content/early/2017/11/10/217257)][[code](https://gitlab.inria.fr/dchen/CKN-seq)]
 
 This paper uses a hybrid of CNNs (to learn good representations) and kernel methods (to learn good prediction functions) to predict transcription factor binding sites.
+
+**Predicting DNA accessibility in the pan-cancer tumor genome using RNA-seq, WGS, and deep learning** [[bioRxiv preprint](https://www.biorxiv.org/content/early/2017/12/05/229385)]
+
+Like Basset (above) this paper shows how to predict DNA accessibility from sequence using CNNs, but it adds the possibility to leverage RNA sequencing data from different cell types as input. In this way implicit information related to cell type can be "transferred" to the accessibility prediction task.
+
 
 ### Non-coding RNA <a name='genomics_non-coding'></a>
 
