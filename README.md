@@ -51,7 +51,7 @@ This describes a clever idea where generative adversarial networks (GANs) are us
 
 **Neural graph fingerprints** [[github](https://github.com/HIPS/neural-fingerprint)][[gitxiv](http://gitxiv.com/posts/DFtFytneou3SXLuSM/convolutional-networks-on-graphs-for-learning-molecular)]
 
-A convolutional net that can learn features which are useful for predicting properties of novel molecules; “molecular fingerprints”. The net works on a graph where atoms are nodes and bonds are edges. Developed by the group of Ryan Adams, who co-hosts the very good [Talking Machines](http://www.thetalkingmachines.com/) podcast.
+A convolutional net that can learn features which are useful for predicting properties of novel molecules; “molecular fingerprints”. The net works on a graph where atoms are nodes and bonds are edges. Developed by the group of Ryan Adams, who used to co-host the very good [Talking Machines](http://www.thetalkingmachines.com/) podcast.
 
 **Deep-learning models for Drug Discovery and Quantum Chemistry** [[github](https://github.com/deepchem/deepchem)][[Python library](http://deepchem.io/)][[preprint](https://arxiv.org/abs/1611.03199)]
 
