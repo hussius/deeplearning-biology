@@ -14,6 +14,7 @@ You might also want to refer to the [awesome deepbio](https://github.com/gokcene
 * [Metabolomics](#metabolomics)
 * [Generic 'omics tools](#omics)
 * [Genomics](#genomics)
+  - [Variant calling](#genomics_variant-calling)
   - [Gene expression](#genomics_expression)
   - [Predicting enhancers and regulatory elements](#genomics_enhancers)
   - [Methylation](#genomics_methylation)
@@ -89,6 +90,12 @@ Classification algorithms for metabolomics data with respect to estrogen recepto
 ## Genomics <a name="genomics"></a>
 
 This category is divided into several subfields.
+
+### Variant calling <a name='genomics_variant-calling'></a>
+
+**DeepVariant** [[github](https://github.com/google/deepvariant)][[preprint](https://www.biorxiv.org/content/early/2016/12/21/092890)]
+
+This preprint from Google originally came out in late 2016 but it got the most publicity about a year later when the code was made public and press releases started appearing. The Google researchers approached a well-studied problem, variant calling from DNA sequencing data (where the aim is to correctly identify variations from the reference genome in an individual's DNA, e.g. mutations or polymorphisms) using a counter-intuitive but clever approach. Instead of using the nucleotides in the sequenced DNA fragments directly (in the form of the symbols A, C, G, T), they first converted the sequences into images and then applied convolutional neural networks to these images (which represent "pile-ups" or DNA sequences; stacks of aligned sequences.) This turned out to be a very effective way to call variants as proven by both Google's own and independent benchmarks.
 
 ### Gene expression <a name='genomics_expression'></a>
 
