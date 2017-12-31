@@ -58,6 +58,14 @@ A convolutional net that can learn features which are useful for predicting prop
 
 Abstract starts: "We report a method to convert discrete representations of molecules to and from a multidimensional continuous representation. This model allows us to generate new molecules for efficient exploration and optimization through open-ended spaces of chemical compounds."
 
+**Objective-Reinforced Generative Adversarial Networks (ORGAN)** [[github](https://github.com/gablg1/ORGAN)][[preprint](https://arxiv.org/abs/1705.10843)]
+
+A method that combines generative models with reinforcement learning to direct the generative process towards some desired target, ORGAN is a generic method for discrete data but is in this case exemplified by a drug discovery use case.
+
+**Molecular De-Novo Design through Deep Reinforcement Learning** [[github](https://github.com/MarcusOlivecrona/REINVENT)][[preprint](https://arxiv.org/abs/1704.07555)]
+
+PyTorch sequence generation model that uses reinforcement learning. Nice widget showing training progress and molecules generated during training is shown on the Github page. Abstract starts: "This work introduces a method to tune a sequence-based generative model for molecular de novo design that through augmented episodic likelihood can learn to generate structures with certain specified desirable properties. We demonstrate how this model can execute a range of tasks such as generating analogues to a query structure and generating compounds predicted to be active against a biological target."
+
 **One-shot learning models for drug discovery and DeepChem** [[github](https://github.com/deepchem/deepchem)][[Python library](http://deepchem.io/)][[paper](http://pubs.acs.org/doi/abs/10.1021/acscentsci.6b00367)]
 
 DeepChem is a "... [P]ython library that aims to make the use of machine-learning in drug discovery straightforward and convenient" which checks a lot of boxes when it comes to advanced deep learning: one-shot learning, graph convolutional networks, learning from less data, and LSTM embeddings. According to the GitHub site, "DeepChem aims to provide a high quality open-source toolchain that democratizes the use of deep-learning in drug discovery, materials science, and quantum chemistry."
