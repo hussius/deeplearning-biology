@@ -156,6 +156,10 @@ Made for predicting the function of non-protein coding DNA sequence. Uses a conv
 
 Based on Torch, this package focuses on predicting the accessibility (or “openness”) of the chromatin – the physical packaging of the genetic information (DNA+associated proteins). This can exist in more condensed or relaxed states in different cell types, which is partly influenced by the DNA sequence (not completely, because then it would not differ from cell to cell.)
 
+**Basenji – Sequential regulatory activity prediction across chromosomes with convolutional neural networks** [[github1](https://www.github.com/calico/basenji)][[github2](https://github.com/tensorflow/tensor2tensor/blob/master/tensor2tensor/models/research/gene_expression.py)][[biorxiv](https://www.biorxiv.org/content/early/2017/07/10/161851)]
+
+A follow-up project to Basset, this Tensorflow-based model uses both standard and dilated convolutions to model regulatory signals and gene expression (in the form of CAGE tag density) in many different cell types. Notably, the underlying model has been brought into Google's Tensor2Tensor repository (see "github2" link above), which collects many models in image and speech recognition, machine translation, text classification etc. However, at the time of writing the Tensor2Tensor model seems not quite mature for easy use, so it is probably better to use the dedicated Basenji repo ("github1") for now. 
+
 **DeepSEA – Predicting effects of noncoding variants with deep learning–based sequence model** [[web server](http://deepsea.princeton.edu/job/analysis/create/)][[paper](http://www.nature.com/nmeth/journal/v12/n10/full/nmeth.3547.html)]
 
 Like the packages above, this one also models chromatin accessibility as well as the binding of certain proteins (transcription factors) to DNA and the presence of so-called histone marks that are associated with changes in accessibility. This piece of software seems to focus a bit more explicitly than the others on predicting how single-nucleotide mutations affect the chromatin structure. Published in a high-profile journal (Nature Methods).
