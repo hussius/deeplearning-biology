@@ -22,6 +22,7 @@ You might also want to refer to the [awesome deepbio](https://github.com/gokcene
   - [Single-cell applications](#genomics_single-cell)
   - [Non-coding RNA](#genomics_non-coding)
   - [Population genetics](#genomics_pop)
+* [Systems biology](#sysbio)
 * [Neuroscience](#neuro)
 
 ## Reviews <a name="reviews"></a>
@@ -279,6 +280,12 @@ Active learning, a framework addressing how to select training examples in order
 **Diet networks: thin parameters for fat genomics** [[manuscript](http://openreview.net/pdf?id=Sk-oDY9ge)]
 
 This weirdly-named paper addresses the frequently encountered problem in genomics where the number of features is much larger than the number of training examples. Here, it is addressed in the context of SNPs (single-nucleotide polymorphisms, genetic variations between individuals). The authors propose a new network parametrization that reduces the number of free parameters using a multi-task architecture which tries to learn a useful embedding of the input features.
+
+### Systems biology<a name='sysbio'></a>
+
+**Using deep learning to model the hierarchical structure and function of a cell** [[web server](http://d-cell.ucsd.edu)][[paper](https://www.nature.com/articles/nmeth.4627/)]
+
+In this ambitious paper, the authors attempt to construct an interpretable neural network model (VNN; visible neural network) of a eukaryotic cell based on millions of genotype-phenotype associations. The network is built in a hierarchy with 12 levels, where each level is supposed to reflect a biologically meaningful level of organization. The resulting model can predict, for a given genetic perturbation, what the resulting phenotype is likely to be.
 
 ## Neuroscience <a name='neuro'></a>
 
