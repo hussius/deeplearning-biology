@@ -90,6 +90,7 @@ The GitHub summary reads: "We introduce a new representation for biological sequ
 
 A toolbox for learning motifs from DNA/RNA sequence data using convolutional neural networks, this Tensorflow-based library supposedly runs on GPU out of the box and also does things like hyperparameter optimization and visualizations of what different network layers are learning.
 
+
 ## Proteomics <a name="proteomics"></a>
 
 **Pcons2 – Improved Contact Predictions Using the Recognition of Protein Like Contact Patterns** [[web interface](http://c2.pcons.net/)]
@@ -103,6 +104,11 @@ The authors use CNNs on feature maps extracted from protein 3D structures in the
 **Deep-RBPPred: Predicting RNA binding proteins in the proteome scale based on deep learning** [[code](http://www.rnabinding.com/Deep_RBPPred/Deep-RBPPred.html)][[bioRxiv preprint](https://www.biorxiv.org/content/early/2017/10/27/210153)] 
 
 Predicts RNA-binding proteins using CNNs.
+
+**EVOVAE: Vartiational autoencoding of Protein Sequences**[[code](https://github.com/samsinai/VAE_protein_function)][[arXiv preprint](https://arxiv.org/abs/1712.03346)]
+
+From the abstract: "We present an embedding of natural protein sequences using a Variational Auto-Encoder and use it to predict how mutations affect protein function. We use this unsupervised approach to cluster natural variants and learn interactions between sets of positions within a protein. This approach generally performs better than baseline methods that consider no interactions within sequences, and in some cases better than the state-of-the-art approaches that use the inverse-Potts model. This generative model can be used to computationally guide exploration of protein sequence space and to better inform rational and automatic protein design."
+
 
 ## Metabolomics <a name="metabolomics"></a>
 
