@@ -55,7 +55,7 @@ This describes a clever idea where generative adversarial networks (GANs) are us
 
 A convolutional net that can learn features which are useful for predicting properties of novel molecules; “molecular fingerprints”. The net works on a graph where atoms are nodes and bonds are edges. Developed by the group of Ryan Adams, who used to co-host the very good [Talking Machines](http://www.thetalkingmachines.com/) podcast.
 
-**Automatic chemical design using a data-driven continuous representation of molecules** [[preprint](https://arxiv.org/abs/1610.02415)]
+**Automatic chemical design using a data-driven continuous representation of molecules** [[github](https://github.com/aspuru-guzik-group/chemical_vae)][[preprint](https://arxiv.org/abs/1610.02415)]
 
 Abstract starts: "We report a method to convert discrete representations of molecules to and from a multidimensional continuous representation. This model allows us to generate new molecules for efficient exploration and optimization through open-ended spaces of chemical compounds."
 
