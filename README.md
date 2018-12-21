@@ -45,6 +45,11 @@ An overview of several types of deep nets and their applications in translationa
 
 Papers on methods that are more widely applicable to biological or clinical data.
 
+**Fast animal pose estimation using deep neural networks** [[Github](https://github.com/talmo/leap)][[bioRxiv preprint](
+https://www.biorxiv.org/content/biorxiv/early/2018/05/25/331181.full.pdf)]
+
+This paper describes generating confidence maps and pose from flies. The repository includes a graphical user interface for labeling body parts.
+
 **Privacy-preserving generative deep neural networks support clinical data sharing** [[Github](https://github.com/greenelab/SPRINT_gan)][[bioRxiv preprint](https://www.biorxiv.org/content/early/2017/11/15/159756)]
 
 This describes a clever idea where generative adversarial networks (GANs) are used to synthesize data that closely resembles actual data measured on study participants, but which cannot be traced back to a specific subject. The latter aspect, called differential privacy, is incorporated into the method by design and gives strong guarantees of the likelihood that a subject could be identified as a member of a trial.
