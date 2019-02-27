@@ -140,6 +140,9 @@ This preprint from Google originally came out in late 2016 but it got the most p
 
 In modeling gene expression, the inputs are typically numerical values (integers or floats) estimating how much RNA is produced from a DNA template in a particular cell type or condition.
 
+**Gene Expression Convolutions Using Gene Interaction Graphs** [[github](https://github.com/mila-iqia/gene-graph-conv)] [[arxiv](https://github.com/mila-iqia/gene-graph-conv)]
+They discuss how gene-gene interaction graphs (same pathway, protein-protein, co-expression, or research paper text association) can be used to impose a bias on a deep neural network model similar to the spatial bias imposed by convolutions on an image. They find this approach provides an advantage for particular tasks in a low data regime but is very dependent on the quality of the graph used. 
+
 **ADAGE – Analysis using Denoising Autoencoders of Gene Expression** [[github](https://github.com/greenelab/adage)][[gitxiv](http://gitxiv.com/posts/M9Dnc8HbKvNgsSp5D/adage-analysis-using-denoising-autoencoders-of-gene)]
 
 This is a Theano implementation of stacked denoising autoencoders for extracting relevant patterns from large sets of gene expression data, a kind of feature construction approach if you will. I have played around with this package quite a bit myself. The authors initially published a [conference paper](http://www.worldscientific.com/doi/abs/10.1142/9789814644730_0014) applying the model to a compendium of breast cancer (microarray) gene expression data, and more recently posted a paper on [bioRxiv](http://biorxiv.org/content/early/2015/11/05/030650) where they apply it to all available expression data (microarray and RNA-seq) on the pathogen Pseudomonas aeruginosa. (I understand that this manuscript will soon be published in a journal.)
