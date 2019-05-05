@@ -14,7 +14,7 @@ You might also want to refer to the [awesome deepbio](https://github.com/gokcene
 * [Proteomics](#proteomics)
 * [Metabolomics](#metabolomics)
 * [Generic 'omics tools](#omics)
- - [NLP inspired genomics applications](#omics_nlp)
+  - [NLP inspired genomics applications](#omics_nlp)
 * [Genomics](#genomics)
   - [Variant calling](#genomics_variant-calling)
   - [Gene expression](#genomics_expression)
