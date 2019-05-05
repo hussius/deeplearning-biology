@@ -15,6 +15,7 @@ You might also want to refer to the [awesome deepbio](https://github.com/gokcene
 * [Metabolomics](#metabolomics)
 * [Generic 'omics tools](#omics)
 * [Genomics](#genomics)
+  - [NLP inspired genomics applications](#genomics_nlp)
   - [Variant calling](#genomics_variant-calling)
   - [Gene expression](#genomics_expression)
   - [Predicting enhancers and regulatory elements](#genomics_enhancers)
@@ -137,6 +138,13 @@ Classification algorithms for metabolomics data with respect to estrogen recepto
 ## Genomics <a name="genomics"></a>
 
 This category is divided into several subfields.
+
+### NLP inspired <a name='genomics_nlp'></a>
+
+**Genomic-ULMFiT: ULMFiT for Genomic Sequence Data** [[github](https://github.com/kheyer/Genomic-ULMFiT)]
+
+This repo is an implementation of FastAI's ULMFiT language transfer learning model for genomics. ULMFiT is based on an AWD-LSTM model and has been shown to be very effective for solving various text classification tasks. Here, the repo's author has extended FastAI's classes with specific subclasses for DNA sequence data. The concept with ULMFiT is that you (1) learn a language model from a large body of text in an unsupervised way (ie you don't need any labels) by having the model guess the next word (or token); (2) take the language model from step (1) and fine-tune it on the (probably) smaller labeled data set that you want to do classification on, but still do the training without labels in this step (and try to predict the next word), (3) finally fine-tune on the final classification task, using the labels. In genomics, the large body of text in step (1) could be, for instance, the whole human genome, or some other subset of GenBank/Sequence Read Archive/... The author shows that this approach works quite well for a range of classification problems, like E. coli and human promoter classification, metagenomic classification, enhancer classification and mRNA/lincRNA classification. 
+
 
 ### Variant calling <a name='genomics_variant-calling'></a>
 
