@@ -367,6 +367,11 @@ Active learning, a framework addressing how to select training examples in order
 
 This approach models single-cell gene expression data directly from counts without initial normalization, and performs clustering in the latent space. Since it is based on a variational autoencoder, it can also be used to generate synthetic single-cell data by sampling from the latent distribution.
 
+**Knowledge-primed neural networks enable biologically interpretable deep learning on single-cell sequencing data** [[code](https://github.com/epigen/KPNN)][[preprint](https://www.biorxiv.org/content/biorxiv/early/2019/10/07/794503.full.pdf)]
+
+From the abstract: "Deep learning has emerged as a powerful methodology for predicting a variety of complex biological phenomena. However, its utility for biological discovery has so far been limited, given that generic deep neural networks provide little insight into the biological mechanisms that underlie a successful prediction. Here we demonstrate
+deep learning on biological networks, where every node has a molecular equivalent (such as a protein or gene) and every edge has a mechanistic interpretation (e.g., a regulatory interaction along a signaling pathway). With knowledge-primed neural networks (KPNNs), we exploit the ability of deep learning algorithms to assign meaningful weights to multi-layered networks for interpretable deep learning."
+
 
 ### Population genetics <a name='genomics_pop'></a>
 
