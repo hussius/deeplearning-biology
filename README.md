@@ -9,6 +9,7 @@ You might also want to refer to the [awesome deepbio](https://github.com/gokcene
 ## Table of contents
 * [Reviews](#reviews)
 * [General](#general)
+* [Model repositories and resources](#repositories)
 * [Chemoinformatics and drug discovery](#chemo)
 * [Biomarker discovery](#biomarker)
 * [Proteomics](#proteomics)
@@ -62,6 +63,10 @@ This paper describes generating confidence maps and pose from flies. The reposit
 **Privacy-preserving generative deep neural networks support clinical data sharing** [[Github](https://github.com/greenelab/SPRINT_gan)][[bioRxiv preprint](https://www.biorxiv.org/content/early/2017/11/15/159756)]
 
 This describes a clever idea where generative adversarial networks (GANs) are used to synthesize data that closely resembles actual data measured on study participants, but which cannot be traced back to a specific subject. The latter aspect, called differential privacy, is incorporated into the method by design and gives strong guarantees of the likelihood that a subject could be identified as a member of a trial.
+
+## Model repositories and resources <a name="repositories"></a>
+
+**The Kipoi repository accelerates community exchange and reuse of predictive models for genomics**[[Github](https://github.com/kipoi/kipoiseq/)][[Website](https://kipoi.org/)][[Paper](https://www.nature.com/articles/s41587-019-0140-0)] Kipoi is a model zoo for genomics, installable by a simple pip install, which provides a consistent interface to hundreds of predictive models in genomics. Kipoi implements a standard set of data loaders for training and prediction of sequence models in deep learning.
 
 ## Chemoinformatics and drug discovery <a name="chemo"></a>
 
