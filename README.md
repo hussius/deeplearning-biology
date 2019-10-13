@@ -14,6 +14,7 @@ You might also want to refer to the [awesome deepbio](https://github.com/gokcene
 * [Biomarker discovery](#biomarker)
 * [Proteomics](#proteomics)
 * [Metabolomics](#metabolomics)
+* [Generative models](#generative)
 * [Generic 'omics tools](#omics)
   - [NLP inspired genomics applications](#omics_nlp)
 * [Genomics](#genomics)
@@ -59,10 +60,6 @@ Papers on methods that are more widely applicable to biological or clinical data
 https://www.biorxiv.org/content/biorxiv/early/2018/05/25/331181.full.pdf)]
 
 This paper describes generating confidence maps and pose from flies. The repository includes a graphical user interface for labeling body parts.
-
-**Privacy-preserving generative deep neural networks support clinical data sharing** [[Github](https://github.com/greenelab/SPRINT_gan)][[bioRxiv preprint](https://www.biorxiv.org/content/early/2017/11/15/159756)]
-
-This describes a clever idea where generative adversarial networks (GANs) are used to synthesize data that closely resembles actual data measured on study participants, but which cannot be traced back to a specific subject. The latter aspect, called differential privacy, is incorporated into the method by design and gives strong guarantees of the likelihood that a subject could be identified as a member of a trial.
 
 ## Model repositories and resources <a name="repositories"></a>
 
@@ -157,6 +154,18 @@ From the abstract: "Biology and medicine have a long-standing interest in comput
 **Deep Learning Accurately Predicts Estrogen Receptor Status in Breast Cancer Metabolomics Data** [[code](http://pubs.acs.org/doi/suppl/10.1021/acs.jproteome.7b00595/suppl_file/pr7b00595_si_001.pdf)][[paper](http://pubs.acs.org/doi/full/10.1021/acs.jproteome.7b00595)]
 
 Classification algorithms for metabolomics data with respect to estrogen receptor status are compared, and the best performing algorithm is an autoencoder-based feedforward network with parameters tuned using H2O's R interface.
+
+### Generative models <a name='generative'></a>
+
+In many cases, it can be useful to generate synthetic data that resembles real data in order to boost dataset sizes or avoid violating patient privacy. Here, some of these approaches are listed.
+
+**Privacy-preserving generative deep neural networks support clinical data sharing** [[Github](https://github.com/greenelab/SPRINT_gan)][[bioRxiv preprint](https://www.biorxiv.org/content/early/2017/11/15/159756)]
+
+This describes a clever idea where generative adversarial networks (GANs) are used to synthesize data that closely resembles actual data measured on study participants, but which cannot be traced back to a specific subject. The latter aspect, called differential privacy, is incorporated into the method by design and gives strong guarantees of the likelihood that a subject could be identified as a member of a trial.
+
+**Creating artificial human genomes using generative models** [[preprint](https://www.biorxiv.org/content/biorxiv/early/2019/10/07/769091.full.pdf)]
+
+The authors compare Restricted Boltzmann Machines (RBM) and Generative Adversarial Networks (GAN) as tools for creating synthetic human genomes.
 
 ## Genomics <a name="genomics"></a>
 
@@ -320,6 +329,11 @@ Most high-throughput assays in genomics, proteomics etc. are affected to some ex
 **Active deep learning reduces annotation burden in automatic cell segmentation** [[bioRxiv preprint](https://www.biorxiv.org/content/early/2017/11/01/211060)]
 
 Active learning, a framework addressing how to select training examples in order to train a model most efficiently, is shown to significantly reduce the time required by experts to annotate cell segmentation images in high-throughput high-context microscopy. Training deep learning models on this type of application of course requires a lot of high-quality labeled data, but the time of the human experts that can provide the labels (perform annotation) is limited and expensive. 
+
+**scVAE: Variational auto-encoders for single-cell gene expression data** [[code](https://github.com/scvae/scvae)][[preprint](https://www.biorxiv.org/content/10.1101/318295v2)]
+
+This approach models single-cell gene expression data directly from counts without initial normalization, and performs clustering in the latent space. Since it is based on a variational autoencoder, it can also be used to generate synthetic single-cell data by sampling from the latent distribution.
+
 
 ### Population genetics <a name='genomics_pop'></a>
 
