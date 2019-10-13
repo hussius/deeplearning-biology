@@ -21,6 +21,7 @@ You might also want to refer to the [awesome deepbio](https://github.com/gokcene
 * [Genomics](#genomics)
   - [Variant calling](#genomics_variant-calling)
   - [Gene expression](#genomics_expression)
+  - [Imaging and gene expression](#imaging_expression)
   - [Predicting enhancers and regulatory elements](#genomics_enhancers)
   - [Methylation](#genomics_methylation)
   - [Single-cell applications](#genomics_single-cell)
@@ -228,6 +229,12 @@ Uses a robust autoencoder (an autoencoder with an outlier filter) to cluster gen
 **Deep learning sequence-based ab initio prediction of variant effects on expression and disease risk** [[github](https://github.com/FunctionLab/ExPecto)][[paper](https://www.nature.com/articles/s41588-018-0160-6)]
 
 The authors use a two-step model to predict the effect of genetic variants on gene expression. In the first step, the authors trained a convolutional neural network to model the 2002 epigenetic marks collected in ENCODE and ROADMAP consortium. In the second step, the authors trained a tissue-specific regularized linear model on the cis-regulatory region of the gene that is encoded by the first step convolutional neural network model. Then the effect of the variants on tissue-specific gene is calculated by the decrease in predicted gene expression through *in silico* mutagenesis.
+
+### Imaging and gene expression <a name='imaging_expression'></a>
+
+**Transcriptomic learning for digital pathology** [[preprint](https://www.biorxiv.org/content/biorxiv/early/2019/10/11/760173.full.pdf)]
+
+From the abstract: "We propose a novel approach based on the integration of multiple data modes, and show that our deep learning model, HE2RNA, can be trained to systematically predict RNA-Seq profiles from whole-slide images alone, without the need for expert annotation. HE2RNA is interpretable by design, opening up new opportunities for virtual staining. In fact, it provides virtual spatialization of gene expression,as validated by double-staining on an independent dataset. Moreover, the transcriptomic representation learned by HE2RNA can be transferred to improve predictive performance for other tasks, particularly for small datasets."
 
 ### Predicting enhancers and regulatory regions <a name='genomics_enhancers'></a>
 
