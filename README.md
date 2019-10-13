@@ -99,6 +99,9 @@ Explores the use of generative adversarial networks (GAN) in generating new mole
 
 **Deep learning enables rapid identification of potent DDR1 kinase inhibitors** [[github](https://github.com/insilicomedicine/gentrl)][paper](https://www.nature.com/articles/s41587-019-0224-x)] In this paper from InSilico Medicine, which came out to some fanfare in 2019, an approach called GENTRL (Generative Tensorial Reinforcement Learning) was used to do rapid discovery of small-molecule inhibitors towards an interesting target. Using this method, the authors were able to come up with a candidate molecule in just 21 days. The model uses an initial generative step with a variational autoencoder and a reinforcement learning procedure for exploring the chemical space. They use an interesting loss function based on Kohonen self-organizing maps. Tensor decomposition was used to encode the relationship between chemical structures and properties. 
 
+**Deep Genomics Nominates Industry’s First AI-Discovered Therapeutic Candidate** [[preprint](https://www.biorxiv.org/content/biorxiv/early/2019/09/17/693572.full.pdf)]
+
+In September 2019, Deep Genomics announced that its deep learning-based platform had identified a therapeutic target and a corresponding drug candidate. The details of the disease-causing mechanism targeted by the proposed candidate molecule are in the preprint link above. 
 
 ## Biomarker discovery <a name="biomarker"></a>
 
