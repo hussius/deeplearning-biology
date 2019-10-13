@@ -189,6 +189,11 @@ This describes a clever idea where generative adversarial networks (GANs) are us
 
 The authors compare Restricted Boltzmann Machines (RBM) and Generative Adversarial Networks (GAN) as tools for creating synthetic human genomes.
 
+**CellBender remove-background: a deep generative model for unsupervised removal of background noise from scRNA-seq datasets** [[code](https://github.com/broadinstitute/CellBender)][[preprint](https://www.biorxiv.org/content/biorxiv/early/2019/10/03/791699.full.pdf)]
+
+The authors present a generative model for removing statistical background noise in single-cell RNA-seq datasets.
+
+
 ## Genomics <a name="genomics"></a>
 
 This category is divided into several subfields.
