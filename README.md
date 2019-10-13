@@ -17,6 +17,7 @@ You might also want to refer to the [awesome deepbio](https://github.com/gokcene
 * [Generative models](#generative)
 * [Generic 'omics tools](#omics)
   - [NLP inspired genomics applications](#omics_nlp)
+  - [Multi-omics integration](#integration)
 * [Genomics](#genomics)
   - [Variant calling](#genomics_variant-calling)
   - [Gene expression](#genomics_expression)
@@ -136,6 +137,12 @@ This repo is an implementation of FastAI's ULMFiT language transfer learning mod
 **Biological Structure and Function Emerge from Scaling Unsupervised Learning to 250 Million Protein Sequences** [[preprint](https://www.biorxiv.org/content/10.1101/622803v1.full)]
 
 In this work from Facebook's AI group, the BERT language model is used to train a language model on 86 billion amino acids across 250 million sequences. Like with ULMFiT (above), the idea is to use transfer learning: pre-training on a massive amount of data to teach a model something about the underlying logic of the language of DNA or proteins, in order to then be able to fine-tune the model for specific tasks. Unfortunately I haven't found any implementation for this yet.
+
+### Multi-omics integration <a name='integration'></a>
+
+**Rise of Deep Learning for Genomic, Proteomic, and Metabolomic Data Integration in Precision Medicine.** [[paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6207407/)]
+
+A review paper about the potential of deep learning for multi-omics data integration.
 
 ## Proteomics <a name="proteomics"></a>
 
