@@ -7,8 +7,6 @@ Please, contribute to this growing list, especially in categories that I haven't
 You might also want to refer to the [awesome deepbio](https://github.com/gokceneraslan/awesome-deepbio) list.
 
 ## Table of contents
-- [deeplearning-biology](#deeplearning-biology)
-  - [Table of contents](#table-of-contents)
   - [Reviews <a name="reviews"></a>](#reviews-a-name%22reviews%22a)
   - [General <a name="general"></a>](#general-a-name%22general%22a)
   - [Model repositories and resources <a name="repositories"></a>](#model-repositories-and-resources-a-name%22repositories%22a)
