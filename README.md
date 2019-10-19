@@ -7,28 +7,30 @@ Please, contribute to this growing list, especially in categories that I haven't
 You might also want to refer to the [awesome deepbio](https://github.com/gokceneraslan/awesome-deepbio) list.
 
 ## Table of contents
-* [Reviews](#reviews)
-* [General](#general)
-* [Model repositories and resources](#repositories)
-* [Chemoinformatics and drug discovery](#chemo)
-* [Biomarker discovery](#biomarker)
-* [Proteomics](#proteomics)
-* [Metabolomics](#metabolomics)
-* [Generative models](#generative)
-* [Generic 'omics tools](#omics)
-  - [NLP inspired genomics applications](#omics_nlp)
-  - [Multi-omics integration](#integration)
-* [Genomics](#genomics)
-  - [Variant calling](#genomics_variant-calling)
-  - [Gene expression](#genomics_expression)
-  - [Imaging and gene expression](#imaging_expression)
-  - [Predicting enhancers and regulatory elements](#genomics_enhancers)
-  - [Methylation](#genomics_methylation)
-  - [Single-cell applications](#genomics_single-cell)
-  - [Non-coding RNA](#genomics_non-coding)
-  - [Population genetics](#genomics_pop)
-* [Systems biology](#sysbio)
-* [Neuroscience](#neuro)
+- [deeplearning-biology](#deeplearning-biology)
+  - [Table of contents](#table-of-contents)
+  - [Reviews <a name="reviews"></a>](#reviews-a-name%22reviews%22a)
+  - [General <a name="general"></a>](#general-a-name%22general%22a)
+  - [Model repositories and resources <a name="repositories"></a>](#model-repositories-and-resources-a-name%22repositories%22a)
+  - [Chemoinformatics and drug discovery <a name="chemo"></a>](#chemoinformatics-and-drug-discovery-a-name%22chemo%22a)
+  - [Biomarker discovery <a name="biomarker"></a>](#biomarker-discovery-a-name%22biomarker%22a)
+  - [Generic 'omics tools <a name="omics"></a>](#generic-omics-tools-a-name%22omics%22a)
+    - [NLP inspired <a name='omics_nlp'></a>](#nlp-inspired-a-nameomicsnlpa)
+    - [Multi-omics integration <a name='integration'></a>](#multi-omics-integration-a-nameintegrationa)
+  - [Proteomics <a name="proteomics"></a>](#proteomics-a-name%22proteomics%22a)
+  - [Metabolomics <a name="metabolomics"></a>](#metabolomics-a-name%22metabolomics%22a)
+    - [Generative models <a name='generative'></a>](#generative-models-a-namegenerativea)
+  - [Genomics <a name="genomics"></a>](#genomics-a-name%22genomics%22a)
+    - [Variant calling <a name='genomics_variant-calling'></a>](#variant-calling-a-namegenomicsvariant-callinga)
+    - [Gene expression <a name='genomics_expression'></a>](#gene-expression-a-namegenomicsexpressiona)
+    - [Imaging and gene expression <a name='imaging_expression'></a>](#imaging-and-gene-expression-a-nameimagingexpressiona)
+    - [Predicting enhancers and regulatory regions <a name='genomics_enhancers'></a>](#predicting-enhancers-and-regulatory-regions-a-namegenomicsenhancersa)
+    - [Non-coding RNA <a name='genomics_non-coding'></a>](#non-coding-rna-a-namegenomicsnon-codinga)
+    - [Methylation <a name='genomics_methylation'></a>](#methylation-a-namegenomicsmethylationa)
+    - [Single-cell applications <a name='genomics_single-cell'></a>](#single-cell-applications-a-namegenomicssingle-cella)
+    - [Population genetics <a name='genomics_pop'></a>](#population-genetics-a-namegenomicspopa)
+    - [Systems biology<a name='sysbio'></a>](#systems-biologya-namesysbioa)
+  - [Neuroscience <a name='neuro'></a>](#neuroscience-a-nameneuroa)
 
 ## Reviews <a name="reviews"></a>
 
@@ -62,7 +64,7 @@ An overview of several types of deep nets and their applications in translationa
 
 This is a very nice review of deep learning applications in biology. It primarily deals with convolutional networks and explains well why and how they are used for sequence (and image) classification.
 
-## General <a name="general"></a>speak and spell
+## General <a name="general"></a>
 
 Papers on methods that are more widely applicable to biological or clinical data.
 
