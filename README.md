@@ -62,7 +62,7 @@ An overview of several types of deep nets and their applications in translationa
 
 This is a very nice review of deep learning applications in biology. It primarily deals with convolutional networks and explains well why and how they are used for sequence (and image) classification.
 
-## General <a name="general"></a>
+## General <a name="general"></a>speak and spell
 
 Papers on methods that are more widely applicable to biological or clinical data.
 
@@ -309,6 +309,10 @@ This paper uses a hybrid of CNNs (to learn good representations) and kernel meth
 
 Like Basset (above) this paper shows how to predict DNA accessibility from sequence using CNNs, but it adds the possibility to leverage RNA sequencing data from different cell types as input. In this way implicit information related to cell type can be "transferred" to the accessibility prediction task.
 
+**Deep learning at base-resolution reveals motif
+syntax of the cis-regulatory code** [[bioRxiv preprint](https://arxiv.org/pdf/1909.12475.pdf)]
+
+Here, a CNN with dilated convolutions is used to learn how different transcription factor binding motifs cooperate. This is the "motif syntax" mentioned in the title. The neural network is trained to predict the signal from a basepair-resolution ChIP assay (ChIP-nexus) and the trained network is then used to infer rules of motif cooperativity.
 
 ### Non-coding RNA <a name='genomics_non-coding'></a>
 
