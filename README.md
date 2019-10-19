@@ -310,7 +310,7 @@ This paper uses a hybrid of CNNs (to learn good representations) and kernel meth
 Like Basset (above) this paper shows how to predict DNA accessibility from sequence using CNNs, but it adds the possibility to leverage RNA sequencing data from different cell types as input. In this way implicit information related to cell type can be "transferred" to the accessibility prediction task.
 
 **Deep learning at base-resolution reveals motif
-syntax of the cis-regulatory code** [[bioRxiv preprint](https://arxiv.org/pdf/1909.12475.pdf)]
+syntax of the cis-regulatory code** [[bioRxiv preprint](https://www.biorxiv.org/content/biorxiv/early/2019/08/21/737981.full.pdf)]
 
 Here, a CNN with dilated convolutions is used to learn how different transcription factor binding motifs cooperate. This is the "motif syntax" mentioned in the title. The neural network is trained to predict the signal from a basepair-resolution ChIP assay (ChIP-nexus) and the trained network is then used to infer rules of motif cooperativity.
 
