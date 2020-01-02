@@ -232,6 +232,10 @@ They discuss how gene-gene interaction graphs (same pathway, protein-protein, co
 
 This is a Theano implementation of stacked denoising autoencoders for extracting relevant patterns from large sets of gene expression data, a kind of feature construction approach if you will. I have played around with this package quite a bit myself. The authors initially published a [conference paper](http://www.worldscientific.com/doi/abs/10.1142/9789814644730_0014) applying the model to a compendium of breast cancer (microarray) gene expression data, and more recently posted a paper on [bioRxiv](http://biorxiv.org/content/early/2015/11/05/030650) where they apply it to all available expression data (microarray and RNA-seq) on the pathogen Pseudomonas aeruginosa. (I understand that this manuscript will soon be published in a journal.)
 
+**Exploiting Ladder Networks for Gene Expression Classification** [[paper](https://link.springer.com/chapter/10.1007%2F978-3-319-78723-7_23)]
+
+This paper applies Ladder networks, a semi-supervised deep learning method, to the binary cancer classification problem. The model performance is evaluated on TCGA dataset against other deep learning and conventional machine learning approaches.  
+
 **Learning structure in gene expression data using deep architectures** [[paper](http://biorxiv.org/content/early/2015/11/16/031906)]
 
 This is also about using stacked denoising autoencoders for gene expression data, but there is no available implementation (as far as I could tell). Included here for the sake of completeness (or something.)
