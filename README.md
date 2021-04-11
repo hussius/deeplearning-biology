@@ -143,9 +143,9 @@ This paper attempts to model how viruses evade being detected by the immune syst
 
 This repo is an implementation of FastAI's ULMFiT language transfer learning model for genomics. ULMFiT is based on an AWD-LSTM model and has been shown to be very effective for solving various text classification tasks. Here, the repo's author has extended FastAI's classes with specific subclasses for DNA sequence data. The concept with ULMFiT is that you (1) learn a language model from a large body of text in an unsupervised way (ie you don't need any labels) by having the model guess the next word (or token); (2) take the language model from step (1) and fine-tune it on the (probably) smaller labeled data set that you want to do classification on, but still do the training without labels in this step (and try to predict the next word), (3) finally fine-tune on the final classification task, using the labels. In genomics, the large body of text in step (1) could be, for instance, the whole human genome, or some other subset of GenBank/Sequence Read Archive/... The author shows that this approach works quite well for a range of classification problems, like E. coli and human promoter classification, metagenomic classification, enhancer classification and mRNA/lincRNA classification. 
 
-**Biological Structure and Function Emerge from Scaling Unsupervised Learning to 250 Million Protein Sequences** [[preprint](https://www.biorxiv.org/content/10.1101/622803v1.full)]
+**Biological Structure and Function Emerge from Scaling Unsupervised Learning to 250 Million Protein Sequences** [[github](https://github.com/facebookresearch/esm)][[preprint](https://www.biorxiv.org/content/10.1101/622803v1.full)]
 
-In this work from Facebook's AI group, the BERT language model is used to train a language model on 86 billion amino acids across 250 million sequences. Like with ULMFiT (above), the idea is to use transfer learning: pre-training on a massive amount of data to teach a model something about the underlying logic of the language of DNA or proteins, in order to then be able to fine-tune the model for specific tasks. Unfortunately I haven't found any implementation for this yet.
+In this work from Facebook's AI group, the BERT language model is used to train a language model on 86 billion amino acids across 250 million sequences. Like with ULMFiT (above), the idea is to use transfer learning: pre-training on a massive amount of data to teach a model something about the underlying logic of the language of DNA or proteins, in order to then be able to fine-tune the model for specific tasks. 
 
 
 **ProtTrans: Towards Cracking the Language of Life’s Code Through Self-Supervised Deep Learning and High Performance Computing** [[github](https://github.com/agemagician/ProtTrans)][[huggingface](https://huggingface.co/Rostlab/prot_bert_bfd)][[preprint](https://www.biorxiv.org/content/10.1101/2020.07.12.199554v2)]
@@ -156,7 +156,7 @@ A large-scale effort to train and benchmark Transformer models on protein sequen
 **Extraction of organic chemistry grammar from unsupervised learning of chemical reactions** [[github](https://github.com/rxn4chemistry/rxnmapper)][[paper](https://advances.sciencemag.org/content/7/15/eabe4166)]
 
 
-
+This package does atom mapping for chemistry using transformer networks. From the abstract: *During the last few hundred years, chemists compiled the language of chemical synthesis inferring a series of “reaction rules” from knowing how atoms rearrange during a chemical transformation, a process called atom-mapping. Atom-mapping is a laborious experimental task and, when tackled with computational methods, requires continuous annotation of chemical reactions and the extension of logically consistent directives. Here, we demonstrate that Transformer Neural Networks learn atom-mapping information between products and reactants without supervision or human labeling. Using the Transformer attention weights, we build a chemically agnostic, attention-guided reaction mapper and extract coherent chemical grammar from unannotated sets of reactions.*
 
 ### Multi-omics integration <a name='integration'></a>
 
