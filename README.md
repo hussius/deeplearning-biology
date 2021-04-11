@@ -115,6 +115,7 @@ Explores the use of generative adversarial networks (GAN) in generating new mole
 
 In September 2019, Deep Genomics announced that its deep learning-based platform had identified a therapeutic target and a corresponding drug candidate. The details of the disease-causing mechanism targeted by the proposed candidate molecule are in the preprint link above. 
 
+
 ## Biomarker discovery <a name="biomarker"></a>
 
 **Deep biomarkers of human aging** [[online predictor](http://www.aging.ai/)][[paper](https://www.ncbi.nlm.nih.gov/pubmed/27191382)]
@@ -150,6 +151,12 @@ In this work from Facebook's AI group, the BERT language model is used to train 
 **ProtTrans: Towards Cracking the Language of Life’s Code Through Self-Supervised Deep Learning and High Performance Computing** [[github](https://github.com/agemagician/ProtTrans)][[huggingface](https://huggingface.co/Rostlab/prot_bert_bfd)][[preprint](https://www.biorxiv.org/content/10.1101/2020.07.12.199554v2)]
 
 A large-scale effort to train and benchmark Transformer models on protein sequences, this project even has provided several of its models to the public on the HuggingFace model hub. The abstract starts: *"Computational biology and bioinformatics provide vast data gold-mines from protein sequences, ideal for Language Models (LMs) taken from Natural Language Processing (NLP). These LMs reach for new prediction frontiers at low inference costs. Here, we trained two auto-regressive language models (Transformer-XL, XLNet) and two auto-encoder models (Bert, Albert) on data from UniRef and BFD containing up to 393 billion amino acids (words) from 2.1 billion protein sequences (22- and 112-times the entire English Wikipedia). The LMs were trained on the Summit supercomputer at Oak Ridge National Laboratory (ORNL), using 936 nodes (total 5616 GPUs) and one TPU Pod (V3-512 or V3-1024)."*
+
+
+**Extraction of organic chemistry grammar from unsupervised learning of chemical reactions** [[github](https://github.com/rxn4chemistry/rxnmapper)][[paper](https://advances.sciencemag.org/content/7/15/eabe4166)]
+
+
+
 
 ### Multi-omics integration <a name='integration'></a>
 
