@@ -131,6 +131,11 @@ A toolbox for learning motifs from DNA/RNA sequence data using convolutional neu
 
 ### NLP inspired <a name='omics_nlp'></a>
 
+**Natural language predicts viral escape** [[github](https://github.com/brianhie/viral-mutation)][[paper](https://science.sciencemag.org/content/371/6526/248.17.full)]
+
+This paper attempts to model how viruses evade being detected by the immune system ("viral escape") by using a language model on amino acids implemented with a BiLSTM-based networks. They posit that a sequence that enables escape from the immune system should have high viability, which they liken to the grammaticality of a sentence, while also having different "semantics", i.e. looking different from an antigenic point of view. The grammaticality is learned in the final layer as a prediction task, whereas the semantics are extracted from the representation in the next to last layer.
+
+
 **Genomic-ULMFiT: ULMFiT for Genomic Sequence Data** [[github](https://github.com/kheyer/Genomic-ULMFiT)]
 
 This repo is an implementation of FastAI's ULMFiT language transfer learning model for genomics. ULMFiT is based on an AWD-LSTM model and has been shown to be very effective for solving various text classification tasks. Here, the repo's author has extended FastAI's classes with specific subclasses for DNA sequence data. The concept with ULMFiT is that you (1) learn a language model from a large body of text in an unsupervised way (ie you don't need any labels) by having the model guess the next word (or token); (2) take the language model from step (1) and fine-tune it on the (probably) smaller labeled data set that you want to do classification on, but still do the training without labels in this step (and try to predict the next word), (3) finally fine-tune on the final classification task, using the labels. In genomics, the large body of text in step (1) could be, for instance, the whole human genome, or some other subset of GenBank/Sequence Read Archive/... The author shows that this approach works quite well for a range of classification problems, like E. coli and human promoter classification, metagenomic classification, enhancer classification and mRNA/lincRNA classification. 
