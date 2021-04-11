@@ -158,6 +158,13 @@ A large-scale effort to train and benchmark Transformer models on protein sequen
 
 This package does atom mapping for chemistry using transformer networks. From the abstract: *During the last few hundred years, chemists compiled the language of chemical synthesis inferring a series of “reaction rules” from knowing how atoms rearrange during a chemical transformation, a process called atom-mapping. Atom-mapping is a laborious experimental task and, when tackled with computational methods, requires continuous annotation of chemical reactions and the extension of logically consistent directives. Here, we demonstrate that Transformer Neural Networks learn atom-mapping information between products and reactants without supervision or human labeling. Using the Transformer attention weights, we build a chemically agnostic, attention-guided reaction mapper and extract coherent chemical grammar from unannotated sets of reactions.*
 
+
+**Effective gene expression prediction from sequence by integrating long-range interactions** [[github](https://github.com/deepmind/deepmind-research/tree/master/enformer)][[tensorflow hub](https://tfhub.dev/deepmind/enformer/1)][[paper](https://www.biorxiv.org/content/10.1101/2021.04.07.438649v1)]
+
+
+Can a transformer architecture help solve the hard problem of relating genomic enhancers to gene expression? It is experimentally laborious to connect distal enhancers to genes, and the presence of many long-range interactions has made it challenging to learn them from data via correlations (due to multiple testing), convolutional networks (too short receptive fields) or recurrent networks (hard to keep a long enough memory.) Now researchers at Deep Mind, Calico and Google have introduced the "enhancer transformer", ie Enformer, which can leverage the self-attention mechanism to learn enhancer/gene expression interactions with a much longer range than before. Commendably, the authors have not only published the code on github but there is also a pretrained model on Tensorflow Hub.
+
+
 ### Multi-omics integration <a name='integration'></a>
 
 **Rise of Deep Learning for Genomic, Proteomic, and Metabolomic Data Integration in Precision Medicine.** [[paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6207407/)]
