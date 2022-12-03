@@ -266,6 +266,10 @@ This category is divided into several subfields.
 
 This preprint from Google originally came out in late 2016 but it got the most publicity about a year later when the code was made public and press releases started appearing. The Google researchers approached a well-studied problem, variant calling from DNA sequencing data (where the aim is to correctly identify variations from the reference genome in an individual's DNA, e.g. mutations or polymorphisms) using a counter-intuitive but clever approach. Instead of using the nucleotides in the sequenced DNA fragments directly (in the form of the symbols A, C, G, T), they first converted the sequences into images and then applied convolutional neural networks to these images (which represent "pile-ups" or DNA sequences; stacks of aligned sequences.) This turned out to be a very effective way to call variants as proven by both Google's own and independent benchmarks.
 
+**Language models enable zero-shot prediction of the effects of mutations on protein function** [[github](https://github.com/facebookresearch/esm#zs_variant)][[preprint](https://www.biorxiv.org/content/10.1101/2021.07.09.450648v2)]
+
+This work builds on Meta's protein language models (ESM-1 et al.; see above) and shows that these models can be used for "zero-shot" prediction of variant effects on protein function; that is, no extra experimental data or model training is needed. The protein language model can be used as-is to infer variant effects.
+
 ### Gene expression <a name='genomics_expression'></a>
 
 In modeling gene expression, the inputs are typically numerical values (integers or floats) estimating how much RNA is produced from a DNA template in a particular cell type or condition.
