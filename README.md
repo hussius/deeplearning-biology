@@ -34,6 +34,10 @@ You might also want to refer to the [awesome deepbio](https://github.com/gokcene
 
 These are not implementations as such, but contain useful pointers. Because review papers in this field are more time-sensitive, I have added the month of journal publication. Note that the original preprint may in some cases have been available online long before the published version.
 
+**(2021-11) A Unified View of Relational Deep Learning for Polypharmacy Side Effect, Combination Synergy, and Drug-Drug Interaction Prediction** [[open access paper](https://arxiv.org/pdf/2111.02916v1.pdf)]
+
+In recent years, numerous machine learning models which attempt to solve polypharmacy side effect identification, drug-drug interaction prediction and combination therapy design tasks have been proposed. Here, we present a unified theoretical view of relational machine learning models which can address these tasks. We provide fundamental definitions, compare existing model architectures and discuss performance metrics, datasets and evaluation protocols. In addition, we emphasize possible high impact applications and important future research directions in this domain.
+
 **(2019-12) Deep learning of pharmacogenomics resources: moving towards precision oncology** [[Briefings in Bioinformatics](https://academic.oup.com/bib/advance-article/doi/10.1093/bib/bbz144/5669856#186956080)]
 
 **(2019-04) Deep learning: new computational modelling techniques for genomics** [[Nature Reviews Genetics paper](https://www.nature.com/articles/s41576-019-0122-6)]
