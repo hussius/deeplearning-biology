@@ -149,7 +149,11 @@ This repo is an implementation of FastAI's ULMFiT language transfer learning mod
 
 **Biological Structure and Function Emerge from Scaling Unsupervised Learning to 250 Million Protein Sequences** [[github](https://github.com/facebookresearch/esm)][[preprint](https://www.biorxiv.org/content/10.1101/622803v1.full)]
 
-In this work from Facebook's AI group, the BERT language model is used to train a language model on 86 billion amino acids across 250 million sequences. Like with ULMFiT (above), the idea is to use transfer learning: pre-training on a massive amount of data to teach a model something about the underlying logic of the language of DNA or proteins, in order to then be able to fine-tune the model for specific tasks. 
+In this work from Facebook's (now Meta's) AI group, the BERT language model is used to train a language model, ESM-1, on 86 billion amino acids across 250 million sequences. Like with ULMFiT (above), the idea is to use transfer learning: pre-training on a massive amount of data to teach a model something about the underlying logic of the language of DNA or proteins, in order to then be able to fine-tune the model for specific tasks. 
+
+**MSA Transformer** [[github](https://github.com/facebookresearch/esm)][[preprint](https://www.biorxiv.org/content/10.1101/2021.02.12.430858v3)]
+
+Here, the same team from Meta that introduced the ESM-1 model (above) show that a different type of transformer, which uses multiple sequence alignments (MSA) as input instead of protein sequences, can achieve even better results than a BERT-style transformer while using a smaller number of parameters. They introduce different forms of row and column attention to extract as much information from the MSAs as possible. The GitHub repo contains one trained version of the model, ESM-MSA-1b. 
 
 
 **ProtTrans: Towards Cracking the Language of Life’s Code Through Self-Supervised Deep Learning and High Performance Computing** [[github](https://github.com/agemagician/ProtTrans)][[huggingface](https://huggingface.co/Rostlab/prot_bert_bfd)][[preprint](https://www.biorxiv.org/content/10.1101/2020.07.12.199554v2)]
