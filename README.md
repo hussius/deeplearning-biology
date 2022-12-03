@@ -209,10 +209,14 @@ From the abstract: "We present a deep learning Graph Convolutional Network (GCN)
 
 This one probably needs no introduction. DeepMind released the first version of its protein-folding method AlphaFold in 2018, when it won the prestigious CASP competition. A completely redesigned version, described in this paper (and sometimes called AlphaFold2) won the same competition in 2020 with a very wide margin. The new version used a component called the "Evoformer", a kind of transformer which iteratively processed a set of aligned protein sequences and a matrix of pairwise interaction between amino acids to generate a representation that can be used as input to a folding module, which uses a specific type of attention called "Invariant pointwise attention". The original AlphaFold paper has been followed by many papers that show how new tasks can be solved by modifying the model in different ways.
 
+**OpenFold** [[github](https://github.com/aqlaboratory/openfold)]
+
+This is a Pytorch-based, open-source reimplementation of AlphaFold, which reproduces practically all of the functionality. Before AlphaFold made its model weights generally available, OpenFold was a way to train your own folding model.
+
 
 **MiniFold: a re-implementation of DeepMind's AlphaFold** [[github](https://github.com/EricAlcaide/MiniFold)]
 
-One of the more spectacular successes of deep learning in biology in the recent years was when DeepMind's AlphaFold model won the CASP13 protein structure prediction challenge. It has not been listed on this page partly because there was no open implementation. MiniFold is an attempt to re-implement AlphaFold in a somewhat more minimalistic way.
+One of the more spectacular successes of deep learning in biology in the recent years was when DeepMind's AlphaFold model won the CASP13 protein structure prediction challenge. It was originally not listed on this page because there was no open implementation, but this has since changed. In any case, MiniFold was an attempt to re-implement AlphaFold in a somewhat more minimalistic way.
 
 ## Metabolomics <a name="metabolomics"></a>
 
