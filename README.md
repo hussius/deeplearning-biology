@@ -9,8 +9,10 @@ You might also want to refer to the [awesome deepbio](https://github.com/gokcene
 ## Table of contents
   - [Reviews](#reviews)
   - [Model repositories and resources](#repositories)
+  - [Sequence modelling](#seqmodels)
+  - [Multi-omics integration](#integration)
   - [Protein biology](#protein_biology)
-    - [Structure prediction](#protein_biology_structure_predictiom)
+    - [Structure prediction](#protein_biology_structure_prediction)
     - [Protein design](#protein_biology_design)
     - [Function prediction](#protein_biology_function_prediction)
   - [Genomics](#genomics)
@@ -22,14 +24,11 @@ You might also want to refer to the [awesome deepbio](https://github.com/gokcene
     - [Methylation](#genomics_methylation)
     - [Single-cell applications](#genomics_single-cell)
     - [Population genetics](#genomics_pop)
-    - [Systems biology](#sysbio)
   - [Chemoinformatics and drug discovery](#chemo)
   - [Biomarker discovery](#biomarker)
-  - [Generic 'omics tools](#omics)
-    - [NLP inspired](#omics_nlp)
-    - [Multi-omics integration](#integration)
   - [Metabolomics](#metabolomics)
   - [Generative models](#generative)
+  - [Systems biology](#sysbio)
 
 ## Reviews <a name="reviews"></a>
 
@@ -78,6 +77,64 @@ Kipoi is a model zoo for genomics, installable by a simple pip install, which pr
 **DragoNN** [[Github](https://github.com/kundajelab/dragonn)][[Website](https://kundajelab.github.io/dragonn/)]
 
 DragoNN provides a toolkit for learning about modelling regulatory sequence with neural networks. It has tools for interpreting sequence models and web-based tutorials using Jupyter Notebooks for teaching interactive model manipulation and visualization.
+
+
+## Sequence modelling <a name="seqmodels"></a>
+
+This is a collection of mostly NLP inspired models for modelling biological sequences, such as proteins or genes. Perhaps these models should be moved to other sections as language models in biology become more mainstream.
+
+**Continuous Distributed Representation of Biological Sequences for Deep Genomics and Deep Proteomics**[[github](https://github.com/ehsanasgari/Deep-Proteomics)][[paper](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0141287)]
+
+The GitHub summary reads: "We introduce a new representation for biological sequences. Named bio-vectors (BioVec) to refer to biological sequences in general with protein-vectors (ProtVec) for proteins (amino-acid sequences) and gene-vectors (GeneVec) for gene sequences, this representation can be widely used in applications of deep learning in proteomics and genomics. Biovectors are basically n-gram character skip-gram wordvectors for biological sequences (DNA, RNA, and Protein). In this work, we have explored biophysical and biochemical meaning of this space. In addition, in variety of bioinformatics tasks we have shown the strength of such a sequence representation."
+
+**pysster: Learning Sequence and Structure Motifs in DNA and RNA Sequences using Convolutional Neural Networks**[[github](https://github.com/budach/pysster)][[preprint](https://www.biorxiv.org/content/early/2017/12/06/230086)]
+
+A toolbox for learning motifs from DNA/RNA sequence data using convolutional neural networks, this Tensorflow-based library supposedly runs on GPU out of the box and also does things like hyperparameter optimization and visualizations of what different network layers are learning.
+
+**Unified rational protein engineering with sequence-based deep representation learning** [[github](https://github.com/churchlab/UniRep)][[paper](https://www.nature.com/articles/s41592-019-0598-1)]
+
+The authors introduce UniRep, an early language model for protein sequences based on mLSTMs (multiplicative LSTMs). It's trained on 24 million protein sequences from UniRef50 and can be used to convert protein sequences into numerical vector representations that contain information about protein properties. For example, the representations can be used to train downstream predictors of protein stability and function. UniRep can also be used as a "babbler", or generative model, to design new proteins.
+
+
+**Natural language predicts viral escape** [[github](https://github.com/brianhie/viral-mutation)][[paper](https://science.sciencemag.org/content/371/6526/248.17.full)]
+
+This paper attempts to model how viruses evade being detected by the immune system ("viral escape") by using a language model on amino acids implemented with a BiLSTM-based networks. They posit that a sequence that enables escape from the immune system should have high viability, which they liken to the grammaticality of a sentence, while also having different "semantics", i.e. looking different from an antigenic point of view. The grammaticality is learned in the final layer as a prediction task, whereas the semantics are extracted from the representation in the next to last layer.
+
+
+**Genomic-ULMFiT: ULMFiT for Genomic Sequence Data** [[github](https://github.com/kheyer/Genomic-ULMFiT)]
+
+This repo is an implementation of FastAI's ULMFiT language transfer learning model for genomics. ULMFiT is based on an AWD-LSTM model and has been shown to be very effective for solving various text classification tasks. Here, the repo's author has extended FastAI's classes with specific subclasses for DNA sequence data. The concept with ULMFiT is that you (1) learn a language model from a large body of text in an unsupervised way (ie you don't need any labels) by having the model guess the next word (or token); (2) take the language model from step (1) and fine-tune it on the (probably) smaller labeled data set that you want to do classification on, but still do the training without labels in this step (and try to predict the next word), (3) finally fine-tune on the final classification task, using the labels. In genomics, the large body of text in step (1) could be, for instance, the whole human genome, or some other subset of GenBank/Sequence Read Archive/... The author shows that this approach works quite well for a range of classification problems, like E. coli and human promoter classification, metagenomic classification, enhancer classification and mRNA/lincRNA classification. 
+
+**Biological Structure and Function Emerge from Scaling Unsupervised Learning to 250 Million Protein Sequences** [[github](https://github.com/facebookresearch/esm)][[preprint](https://www.biorxiv.org/content/10.1101/622803v1.full)]
+
+In this work from Facebook's (now Meta's) AI group, the BERT language model is used to train a language model, ESM-1, on 86 billion amino acids across 250 million sequences. Like with ULMFiT (above), the idea is to use transfer learning: pre-training on a massive amount of data to teach a model something about the underlying logic of the language of DNA or proteins, in order to then be able to fine-tune the model for specific tasks. 
+
+**MSA Transformer** [[github](https://github.com/facebookresearch/esm)][[preprint](https://www.biorxiv.org/content/10.1101/2021.02.12.430858v3)]
+
+Here, the same team from Meta that introduced the ESM-1 model (above) show that a different type of transformer, which uses multiple sequence alignments (MSA) as input instead of protein sequences, can achieve even better results than a BERT-style transformer while using a smaller number of parameters. They introduce different forms of row and column attention to extract as much information from the MSAs as possible. The GitHub repo contains one trained version of the model, ESM-MSA-1b. 
+
+
+**ProtTrans: Towards Cracking the Language of Life’s Code Through Self-Supervised Deep Learning and High Performance Computing** [[github](https://github.com/agemagician/ProtTrans)][[huggingface](https://huggingface.co/Rostlab/prot_bert_bfd)][[preprint](https://www.biorxiv.org/content/10.1101/2020.07.12.199554v2)]
+
+A large-scale effort to train and benchmark Transformer models on protein sequences, this project even has provided several of its models to the public on the HuggingFace model hub. The abstract starts: *"Computational biology and bioinformatics provide vast data gold-mines from protein sequences, ideal for Language Models (LMs) taken from Natural Language Processing (NLP). These LMs reach for new prediction frontiers at low inference costs. Here, we trained two auto-regressive language models (Transformer-XL, XLNet) and two auto-encoder models (Bert, Albert) on data from UniRef and BFD containing up to 393 billion amino acids (words) from 2.1 billion protein sequences (22- and 112-times the entire English Wikipedia). The LMs were trained on the Summit supercomputer at Oak Ridge National Laboratory (ORNL), using 936 nodes (total 5616 GPUs) and one TPU Pod (V3-512 or V3-1024)."*
+
+
+**Effective gene expression prediction from sequence by integrating long-range interactions** [[github](https://github.com/deepmind/deepmind-research/tree/master/enformer)][[tensorflow hub](https://tfhub.dev/deepmind/enformer/1)][[paper](https://www.biorxiv.org/content/10.1101/2021.04.07.438649v1)]
+
+
+Can a transformer architecture help solve the hard problem of relating genomic enhancers to gene expression? It is experimentally laborious to connect distal enhancers to genes, and the presence of many long-range interactions has made it challenging to learn them from data via correlations (due to multiple testing), convolutional networks (too short receptive fields) or recurrent networks (hard to keep a long enough memory.) Now researchers at Deep Mind, Calico and Google have introduced the "enhancer transformer", ie Enformer, which can leverage the self-attention mechanism to learn enhancer/gene expression interactions with a much longer range than before. Commendably, the authors have not only published the code on github but there is also a pretrained model on Tensorflow Hub.
+
+**GenSLMs: Genome-scale language models reveal SARS-CoV-2 evolutionary dynamics** [[github](https://github.com/ramanathanlab/genslm)][[paper](https://www.biorxiv.org/content/10.1101/2022.10.10.511571v1)]
+
+
+Like the earlier Enformer, this is a transformer model for nucleotides (DNA or RNA), but with different design and goals. Whereas Enformer is a pre-trained model for mammalian genomes (human and mouse), GenSLM is intended as a foundation model for less complex genomes, such as bacteria and viruses. It is pre-trained on 110 million prokaryotic (bacterial and archaeal) genomes using a GPT-style ("predict the next token") loss. The tokens are codons (nucleotide triplets), and consequently, the trained model can be "prompted" in GPT-3 fashion with codons. The foundation model can be further finetuned on a subset of genomes ("evolutionary finetuning"), in the case of this paper 1.5 million sequences SARS-CoV-2 genomes, yielding a SARS-CoV-2 specific language model, which contains implicit knowledge of the virus' evolutionary landscape and can be used to identify variants of concern. A further interesting twist in this paper is that long-range interactions, which Enformer tried to solve with convolutions coupled with self-attention, are modelled using diffusion models (á la Stable Diffusion.)
+
+
+## Multi-omics integration <a name='integration'></a>
+
+**Rise of Deep Learning for Genomic, Proteomic, and Metabolomic Data Integration in Precision Medicine.** [[paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6207407/)]
+
+A review paper about the potential of deep learning for multi-omics data integration.
 
 ## Protein biology <a name="protein_biology"></a>
 
@@ -360,6 +417,11 @@ Abstract starts: "We report a method to convert discrete representations of mole
 
 A method that combines generative models with reinforcement learning to direct the generative process towards some desired target, ORGAN is a generic method for discrete data but is in this case exemplified by a drug discovery use case.
 
+**Extraction of organic chemistry grammar from unsupervised learning of chemical reactions** [[github](https://github.com/rxn4chemistry/rxnmapper)][[paper](https://advances.sciencemag.org/content/7/15/eabe4166)]
+
+
+This package does atom mapping for chemistry using transformer networks. From the abstract: *During the last few hundred years, chemists compiled the language of chemical synthesis inferring a series of “reaction rules” from knowing how atoms rearrange during a chemical transformation, a process called atom-mapping. Atom-mapping is a laborious experimental task and, when tackled with computational methods, requires continuous annotation of chemical reactions and the extension of logically consistent directives. Here, we demonstrate that Transformer Neural Networks learn atom-mapping information between products and reactants without supervision or human labeling. Using the Transformer attention weights, we build a chemically agnostic, attention-guided reaction mapper and extract coherent chemical grammar from unannotated sets of reactions.*
+
 **Molecular De-Novo Design through Deep Reinforcement Learning** [[github](https://github.com/MarcusOlivecrona/REINVENT)][[preprint](https://arxiv.org/abs/1704.07555)]
 
 PyTorch sequence generation model that uses reinforcement learning. Nice widget showing training progress and molecules generated during training is shown on the Github page. Abstract starts: "This work introduces a method to tune a sequence-based generative model for molecular de novo design that through augmented episodic likelihood can learn to generate structures with certain specified desirable properties. We demonstrate how this model can execute a range of tasks such as generating analogues to a query structure and generating compounds predicted to be active against a biological target."
@@ -385,67 +447,6 @@ In September 2019, Deep Genomics announced that its deep learning-based platform
 
 From the abstract: "One of the major impediments in human aging research is the absence of a comprehensive and actionable set of biomarkers that may be targeted and measured to track the effectiveness of therapeutic interventions. In this study, we designed a modular ensemble of 21 deep neural networks (DNNs) of varying depth, structure and optimization to predict human chronological age using a basic blood test. "
 
-## Generic 'omics tools <a name="omics"></a>
-
-**Continuous Distributed Representation of Biological Sequences for Deep Genomics and Deep Proteomics**[[github](https://github.com/ehsanasgari/Deep-Proteomics)][[paper](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0141287)]
-
-The GitHub summary reads: "We introduce a new representation for biological sequences. Named bio-vectors (BioVec) to refer to biological sequences in general with protein-vectors (ProtVec) for proteins (amino-acid sequences) and gene-vectors (GeneVec) for gene sequences, this representation can be widely used in applications of deep learning in proteomics and genomics. Biovectors are basically n-gram character skip-gram wordvectors for biological sequences (DNA, RNA, and Protein). In this work, we have explored biophysical and biochemical meaning of this space. In addition, in variety of bioinformatics tasks we have shown the strength of such a sequence representation."
-
-**pysster: Learning Sequence and Structure Motifs in DNA and RNA Sequences using Convolutional Neural Networks**[[github](https://github.com/budach/pysster)][[preprint](https://www.biorxiv.org/content/early/2017/12/06/230086)]
-
-A toolbox for learning motifs from DNA/RNA sequence data using convolutional neural networks, this Tensorflow-based library supposedly runs on GPU out of the box and also does things like hyperparameter optimization and visualizations of what different network layers are learning.
-
-### NLP inspired <a name='omics_nlp'></a>
-
-**Unified rational protein engineering with sequence-based deep representation learning** [[github](https://github.com/churchlab/UniRep)][[paper](https://www.nature.com/articles/s41592-019-0598-1)]
-
-The authors introduce UniRep, an early language model for protein sequences based on mLSTMs (multiplicative LSTMs). It's trained on 24 million protein sequences from UniRef50 and can be used to convert protein sequences into numerical vector representations that contain information about protein properties. For example, the representations can be used to train downstream predictors of protein stability and function. UniRep can also be used as a "babbler", or generative model, to design new proteins.
-
-
-**Natural language predicts viral escape** [[github](https://github.com/brianhie/viral-mutation)][[paper](https://science.sciencemag.org/content/371/6526/248.17.full)]
-
-This paper attempts to model how viruses evade being detected by the immune system ("viral escape") by using a language model on amino acids implemented with a BiLSTM-based networks. They posit that a sequence that enables escape from the immune system should have high viability, which they liken to the grammaticality of a sentence, while also having different "semantics", i.e. looking different from an antigenic point of view. The grammaticality is learned in the final layer as a prediction task, whereas the semantics are extracted from the representation in the next to last layer.
-
-
-**Genomic-ULMFiT: ULMFiT for Genomic Sequence Data** [[github](https://github.com/kheyer/Genomic-ULMFiT)]
-
-This repo is an implementation of FastAI's ULMFiT language transfer learning model for genomics. ULMFiT is based on an AWD-LSTM model and has been shown to be very effective for solving various text classification tasks. Here, the repo's author has extended FastAI's classes with specific subclasses for DNA sequence data. The concept with ULMFiT is that you (1) learn a language model from a large body of text in an unsupervised way (ie you don't need any labels) by having the model guess the next word (or token); (2) take the language model from step (1) and fine-tune it on the (probably) smaller labeled data set that you want to do classification on, but still do the training without labels in this step (and try to predict the next word), (3) finally fine-tune on the final classification task, using the labels. In genomics, the large body of text in step (1) could be, for instance, the whole human genome, or some other subset of GenBank/Sequence Read Archive/... The author shows that this approach works quite well for a range of classification problems, like E. coli and human promoter classification, metagenomic classification, enhancer classification and mRNA/lincRNA classification. 
-
-**Biological Structure and Function Emerge from Scaling Unsupervised Learning to 250 Million Protein Sequences** [[github](https://github.com/facebookresearch/esm)][[preprint](https://www.biorxiv.org/content/10.1101/622803v1.full)]
-
-In this work from Facebook's (now Meta's) AI group, the BERT language model is used to train a language model, ESM-1, on 86 billion amino acids across 250 million sequences. Like with ULMFiT (above), the idea is to use transfer learning: pre-training on a massive amount of data to teach a model something about the underlying logic of the language of DNA or proteins, in order to then be able to fine-tune the model for specific tasks. 
-
-**MSA Transformer** [[github](https://github.com/facebookresearch/esm)][[preprint](https://www.biorxiv.org/content/10.1101/2021.02.12.430858v3)]
-
-Here, the same team from Meta that introduced the ESM-1 model (above) show that a different type of transformer, which uses multiple sequence alignments (MSA) as input instead of protein sequences, can achieve even better results than a BERT-style transformer while using a smaller number of parameters. They introduce different forms of row and column attention to extract as much information from the MSAs as possible. The GitHub repo contains one trained version of the model, ESM-MSA-1b. 
-
-
-**ProtTrans: Towards Cracking the Language of Life’s Code Through Self-Supervised Deep Learning and High Performance Computing** [[github](https://github.com/agemagician/ProtTrans)][[huggingface](https://huggingface.co/Rostlab/prot_bert_bfd)][[preprint](https://www.biorxiv.org/content/10.1101/2020.07.12.199554v2)]
-
-A large-scale effort to train and benchmark Transformer models on protein sequences, this project even has provided several of its models to the public on the HuggingFace model hub. The abstract starts: *"Computational biology and bioinformatics provide vast data gold-mines from protein sequences, ideal for Language Models (LMs) taken from Natural Language Processing (NLP). These LMs reach for new prediction frontiers at low inference costs. Here, we trained two auto-regressive language models (Transformer-XL, XLNet) and two auto-encoder models (Bert, Albert) on data from UniRef and BFD containing up to 393 billion amino acids (words) from 2.1 billion protein sequences (22- and 112-times the entire English Wikipedia). The LMs were trained on the Summit supercomputer at Oak Ridge National Laboratory (ORNL), using 936 nodes (total 5616 GPUs) and one TPU Pod (V3-512 or V3-1024)."*
-
-
-**Extraction of organic chemistry grammar from unsupervised learning of chemical reactions** [[github](https://github.com/rxn4chemistry/rxnmapper)][[paper](https://advances.sciencemag.org/content/7/15/eabe4166)]
-
-
-This package does atom mapping for chemistry using transformer networks. From the abstract: *During the last few hundred years, chemists compiled the language of chemical synthesis inferring a series of “reaction rules” from knowing how atoms rearrange during a chemical transformation, a process called atom-mapping. Atom-mapping is a laborious experimental task and, when tackled with computational methods, requires continuous annotation of chemical reactions and the extension of logically consistent directives. Here, we demonstrate that Transformer Neural Networks learn atom-mapping information between products and reactants without supervision or human labeling. Using the Transformer attention weights, we build a chemically agnostic, attention-guided reaction mapper and extract coherent chemical grammar from unannotated sets of reactions.*
-
-
-**Effective gene expression prediction from sequence by integrating long-range interactions** [[github](https://github.com/deepmind/deepmind-research/tree/master/enformer)][[tensorflow hub](https://tfhub.dev/deepmind/enformer/1)][[paper](https://www.biorxiv.org/content/10.1101/2021.04.07.438649v1)]
-
-
-Can a transformer architecture help solve the hard problem of relating genomic enhancers to gene expression? It is experimentally laborious to connect distal enhancers to genes, and the presence of many long-range interactions has made it challenging to learn them from data via correlations (due to multiple testing), convolutional networks (too short receptive fields) or recurrent networks (hard to keep a long enough memory.) Now researchers at Deep Mind, Calico and Google have introduced the "enhancer transformer", ie Enformer, which can leverage the self-attention mechanism to learn enhancer/gene expression interactions with a much longer range than before. Commendably, the authors have not only published the code on github but there is also a pretrained model on Tensorflow Hub.
-
-**GenSLMs: Genome-scale language models reveal SARS-CoV-2 evolutionary dynamics** [[github](https://github.com/ramanathanlab/genslm)][[paper](https://www.biorxiv.org/content/10.1101/2022.10.10.511571v1)]
-
-
-Like the earlier Enformer, this is a transformer model for nucleotides (DNA or RNA), but with different design and goals. Whereas Enformer is a pre-trained model for mammalian genomes (human and mouse), GenSLM is intended as a foundation model for less complex genomes, such as bacteria and viruses. It is pre-trained on 110 million prokaryotic (bacterial and archaeal) genomes using a GPT-style ("predict the next token") loss. The tokens are codons (nucleotide triplets), and consequently, the trained model can be "prompted" in GPT-3 fashion with codons. The foundation model can be further finetuned on a subset of genomes ("evolutionary finetuning"), in the case of this paper 1.5 million sequences SARS-CoV-2 genomes, yielding a SARS-CoV-2 specific language model, which contains implicit knowledge of the virus' evolutionary landscape and can be used to identify variants of concern. A further interesting twist in this paper is that long-range interactions, which Enformer tried to solve with convolutions coupled with self-attention, are modelled using diffusion models (á la Stable Diffusion.)
-
-## Multi-omics integration <a name='integration'></a>
-
-**Rise of Deep Learning for Genomic, Proteomic, and Metabolomic Data Integration in Precision Medicine.** [[paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6207407/)]
-
-A review paper about the potential of deep learning for multi-omics data integration.
 
 ## Metabolomics <a name="metabolomics"></a>
 
