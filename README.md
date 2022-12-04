@@ -231,6 +231,12 @@ This is a Pytorch-based, open-source reimplementation of AlphaFold, which reprod
 
 One of the more spectacular successes of deep learning in biology in the recent years was when DeepMind's AlphaFold model won the CASP13 protein structure prediction challenge. It was originally not listed on this page because there was no open implementation, but this has since changed. In any case, MiniFold was an attempt to re-implement AlphaFold in a somewhat more minimalistic way.
 
+
+**Evolutionary-scale prediction of atomic level protein structure with a language model** [[github](https://github.com/facebookresearch/esm#esmfold)][[preprint](https://www.biorxiv.org/content/10.1101/2022.07.20.500902v2)]
+
+The Meta research group that created ESM-1, ESM-MSA and other models described elsewhere in this document here show that large language models can also be used to do protein structure prediction. Given enough parameters and training data, the trained model starts to implicitly learn information about 3D conformation. The authors claim that this LLM-only approach (i.e. it does not use multiple sequence alignments or backbone inputs) is up to 60x faster than other approaches, such as AlphaFold. They use the model to make structure predictions for 600 million metagenomic (environmental DNA) samples.
+
+
 ## Metabolomics <a name="metabolomics"></a>
 
 **Deep Learning Accurately Predicts Estrogen Receptor Status in Breast Cancer Metabolomics Data** [[code](http://pubs.acs.org/doi/suppl/10.1021/acs.jproteome.7b00595/suppl_file/pr7b00595_si_001.pdf)][[paper](http://pubs.acs.org/doi/full/10.1021/acs.jproteome.7b00595)]
