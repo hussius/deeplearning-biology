@@ -27,7 +27,6 @@ You might also want to refer to the [awesome deepbio](https://github.com/gokcene
     - [Multi-omics integration](#integration)
   - [Metabolomics](#metabolomics)
   - [Generative models](#generative)
-  - [Neuroscience](#neuro)
 
 ## Reviews <a name="reviews"></a>
 
@@ -439,7 +438,7 @@ Can a transformer architecture help solve the hard problem of relating genomic e
 
 Like the earlier Enformer, this is a transformer model for nucleotides (DNA or RNA), but with different design and goals. Whereas Enformer is a pre-trained model for mammalian genomes (human and mouse), GenSLM is intended as a foundation model for less complex genomes, such as bacteria and viruses. It is pre-trained on 110 million prokaryotic (bacterial and archaeal) genomes using a GPT-style ("predict the next token") loss. The tokens are codons (nucleotide triplets), and consequently, the trained model can be "prompted" in GPT-3 fashion with codons. The foundation model can be further finetuned on a subset of genomes ("evolutionary finetuning"), in the case of this paper 1.5 million sequences SARS-CoV-2 genomes, yielding a SARS-CoV-2 specific language model, which contains implicit knowledge of the virus' evolutionary landscape and can be used to identify variants of concern. A further interesting twist in this paper is that long-range interactions, which Enformer tried to solve with convolutions coupled with self-attention, are modelled using diffusion models (á la Stable Diffusion.)
 
-### Multi-omics integration <a name='integration'></a>
+## Multi-omics integration <a name='integration'></a>
 
 **Rise of Deep Learning for Genomic, Proteomic, and Metabolomic Data Integration in Precision Medicine.** [[paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6207407/)]
 
@@ -451,7 +450,7 @@ A review paper about the potential of deep learning for multi-omics data integra
 
 Classification algorithms for metabolomics data with respect to estrogen receptor status are compared, and the best performing algorithm is an autoencoder-based feedforward network with parameters tuned using H2O's R interface.
 
-### Generative models <a name='generative'></a>
+## Generative models <a name='generative'></a>
 
 In many cases, it can be useful to generate synthetic data that resembles real data in order to boost dataset sizes or avoid violating patient privacy. Here, some of these approaches are listed.
 
@@ -463,7 +462,7 @@ This describes a clever idea where generative adversarial networks (GANs) are us
 
 The authors compare Restricted Boltzmann Machines (RBM) and Generative Adversarial Networks (GAN) as tools for creating synthetic human genomes.
 
-### Population genetics <a name='genomics_pop'></a>
+## Population genetics <a name='genomics_pop'></a>
 
 **Deep learning for population genetic inference** [[code](https://sourceforge.net/projects/evonet/)][[paper](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004845)]
 
@@ -471,7 +470,7 @@ The authors compare Restricted Boltzmann Machines (RBM) and Generative Adversari
 
 This weirdly-named paper addresses the frequently encountered problem in genomics where the number of features is much larger than the number of training examples. Here, it is addressed in the context of SNPs (single-nucleotide polymorphisms, genetic variations between individuals). The authors propose a new network parametrization that reduces the number of free parameters using a multi-task architecture which tries to learn a useful embedding of the input features.
 
-### Systems biology<a name='sysbio'></a>
+## Systems biology<a name='sysbio'></a>
 
 **Using deep learning to model the hierarchical structure and function of a cell** [[web server](http://d-cell.ucsd.edu)][[paper](https://www.nature.com/articles/nmeth.4627/)]
 
