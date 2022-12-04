@@ -265,6 +265,10 @@ From the abstract: "A fundamental problem in biomedical research is the low numb
 
 From the abstract: "De novo protein design for catalysis of any desired chemical reaction is a long standing goal in protein engineering, due to the broad spectrum of technological, scientific and medical applications. Currently, mapping protein sequence to protein function is, however, neither computationionally nor experimentally tangible. Here we developed ProteinGAN, a specialised variant of the generative adversarial network that is able to 'learn' natural protein sequence diversity and enables the generation of functional protein sequences. ProteinGAN learns the evolutionary relationships of protein sequences directly from the complex multidimensional amino acid sequence space and creates new, highly diverse sequence variants with natural-like physical properties. Using malate dehydrogenase as a template enzyme, we show that 24% of the ProteinGAN-generated and experimentally tested sequences are soluble and display wild-type level catalytic activity in the tested conditions in vitro, even in highly mutated (>100 mutations) sequences. ProteinGAN therefore demonstrates the potential of artificial intelligence to rapidly generate highly diverse novel functional proteins within the allowed biological constraints of the sequence space."
 
+**Robust deep learning based protein sequence design using ProteinMPNN** [[code](https://github.com/dauparas/ProteinMPNN)][[preprint](https://www.biorxiv.org/content/10.1101/2022.06.03.494563v1)]
+
+This work presents a method for designing a protein sequence that is predicted to fold into a specified conformation, i.e. in a way the reverse of AlphaFold: going from structure to sequence. This is achieved by using a type of graph neural network, a message passing neural network (MPNN.) The diversity of the generated sequences can be tuned, and the authors test the performance of the method both using AlphaFold and experimentally.
+
 ## Genomics <a name="genomics"></a>
 
 This category is divided into several subfields.
