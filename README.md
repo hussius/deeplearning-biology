@@ -8,16 +8,13 @@ You might also want to refer to the [awesome deepbio](https://github.com/gokcene
 
 ## Table of contents
   - [Reviews](#reviews)
-  - [General](#general)
   - [Model repositories and resources](#repositories)
-  - [Chemoinformatics and drug discovery](#chemo)
-  - [Biomarker discovery](#biomarker)
-  - [Generic 'omics tools](#omics)
-    - [NLP inspired](#omics_nlp)
-    - [Multi-omics integration](#integration)
-  - [Proteomics](#proteomics)
-  - [Metabolomics](#metabolomics)
-  - [Generative models](#generative)
+  - [Sequence modelling](#seqmodels)
+  - [Multi-omics integration](#integration)
+  - [Protein biology](#protein_biology)
+    - [Structure prediction](#protein_biology_structure_prediction)
+    - [Protein design](#protein_biology_design)
+    - [Function prediction](#protein_biology_function_prediction)
   - [Genomics](#genomics)
     - [Variant calling](#genomics_variant-calling)
     - [Gene expression](#genomics_expression)
@@ -26,9 +23,12 @@ You might also want to refer to the [awesome deepbio](https://github.com/gokcene
     - [Non-coding RNA](#genomics_non-coding)
     - [Methylation](#genomics_methylation)
     - [Single-cell applications](#genomics_single-cell)
-    - [Population genetics](#genomics_pop)
-    - [Systems biology](#sysbio)
-  - [Neuroscience](#neuro)
+  - [Chemoinformatics and drug discovery](#chemo)
+  - [Biomarker discovery](#biomarker)
+  - [Metabolomics](#metabolomics)
+  - [Generative models](#generative)
+  - [Population genetics](#genomics_pop)
+  - [Systems biology](#sysbio)
 
 ## Reviews <a name="reviews"></a>
 
@@ -68,15 +68,6 @@ An overview of several types of deep nets and their applications in translationa
 
 This is a very nice review of deep learning applications in biology. It primarily deals with convolutional networks and explains well why and how they are used for sequence (and image) classification.
 
-## General <a name="general"></a>
-
-Papers on methods that are more widely applicable to biological or clinical data.
-
-**Fast animal pose estimation using deep neural networks** [[Github](https://github.com/talmo/leap)][[bioRxiv preprint](
-https://www.biorxiv.org/content/biorxiv/early/2018/05/25/331181.full.pdf)]
-
-This paper describes generating confidence maps and pose from flies. The repository includes a graphical user interface for labeling body parts.
-
 ## Model repositories and resources <a name="repositories"></a>
 
 **The Kipoi repository accelerates community exchange and reuse of predictive models for genomics** [[Github](https://github.com/kipoi/kipoiseq/)][[Website](https://kipoi.org/)][[Paper](https://www.nature.com/articles/s41587-019-0140-0)] 
@@ -87,46 +78,10 @@ Kipoi is a model zoo for genomics, installable by a simple pip install, which pr
 
 DragoNN provides a toolkit for learning about modelling regulatory sequence with neural networks. It has tools for interpreting sequence models and web-based tutorials using Jupyter Notebooks for teaching interactive model manipulation and visualization.
 
-## Chemoinformatics and drug discovery <a name="chemo"></a>
 
-**Neural graph fingerprints** [[github](https://github.com/HIPS/neural-fingerprint)]
+## Sequence modelling <a name="seqmodels"></a>
 
-A convolutional net that can learn features which are useful for predicting properties of novel molecules; “molecular fingerprints”. The net works on a graph where atoms are nodes and bonds are edges. Developed by the group of Ryan Adams, who used to co-host the very good [Talking Machines](http://www.thetalkingmachines.com/) podcast.
-
-**Automatic chemical design using a data-driven continuous representation of molecules** [[github](https://github.com/aspuru-guzik-group/chemical_vae)][[preprint](https://arxiv.org/abs/1610.02415)]
-
-Abstract starts: "We report a method to convert discrete representations of molecules to and from a multidimensional continuous representation. This model allows us to generate new molecules for efficient exploration and optimization through open-ended spaces of chemical compounds."
-
-**Objective-Reinforced Generative Adversarial Networks (ORGAN)** [[github](https://github.com/gablg1/ORGAN)][[preprint](https://arxiv.org/abs/1705.10843)]
-
-A method that combines generative models with reinforcement learning to direct the generative process towards some desired target, ORGAN is a generic method for discrete data but is in this case exemplified by a drug discovery use case.
-
-**Molecular De-Novo Design through Deep Reinforcement Learning** [[github](https://github.com/MarcusOlivecrona/REINVENT)][[preprint](https://arxiv.org/abs/1704.07555)]
-
-PyTorch sequence generation model that uses reinforcement learning. Nice widget showing training progress and molecules generated during training is shown on the Github page. Abstract starts: "This work introduces a method to tune a sequence-based generative model for molecular de novo design that through augmented episodic likelihood can learn to generate structures with certain specified desirable properties. We demonstrate how this model can execute a range of tasks such as generating analogues to a query structure and generating compounds predicted to be active against a biological target."
-
-**One-shot learning models for drug discovery and DeepChem** [[github](https://github.com/deepchem/deepchem)][[Python library](http://deepchem.io/)][[paper](http://pubs.acs.org/doi/abs/10.1021/acscentsci.6b00367)]
-
-DeepChem is a "... [P]ython library that aims to make the use of machine-learning in drug discovery straightforward and convenient" which checks a lot of boxes when it comes to advanced deep learning: one-shot learning, graph convolutional networks, learning from less data, and LSTM embeddings. According to the GitHub site, "DeepChem aims to provide a high quality open-source toolchain that democratizes the use of deep-learning in drug discovery, materials science, and quantum chemistry."
-
-**The cornucopia of meaningful leads: Applying deep adversarial autoencoders for new molecule development in oncology** [[github](https://github.com/spoilt333/onco-aae)][[paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5355231/)]
-
-Explores the use of generative adversarial networks (GAN) in generating new molecular leads for drug candidates. In analogy to generating images or video that "look like" they come from some specified distribution, perhaps with some conditioning like "show me a cat picture", the authors reason that novel drug-like molecular structures can be generated with cues about what kind of drug one wants. Here they explore a specific type of generative network, an adversarial autoencoder (AAE), and adapt it into what they call a "artificially-intelligent drug discovery engine."
-
-**Deep learning enables rapid identification of potent DDR1 kinase inhibitors** [[github](https://github.com/insilicomedicine/gentrl)][[paper](https://www.nature.com/articles/s41587-019-0224-x)] In this paper from InSilico Medicine, which came out to some fanfare in 2019, an approach called GENTRL (Generative Tensorial Reinforcement Learning) was used to do rapid discovery of small-molecule inhibitors towards an interesting target. Using this method, the authors were able to come up with a candidate molecule in just 21 days. The model uses an initial generative step with a variational autoencoder and a reinforcement learning procedure for exploring the chemical space. They use an interesting loss function based on Kohonen self-organizing maps. Tensor decomposition was used to encode the relationship between chemical structures and properties. 
-
-**Deep Genomics Nominates Industry’s First AI-Discovered Therapeutic Candidate** [[preprint](https://www.biorxiv.org/content/biorxiv/early/2019/09/17/693572.full.pdf)]
-
-In September 2019, Deep Genomics announced that its deep learning-based platform had identified a therapeutic target and a corresponding drug candidate. The details of the disease-causing mechanism targeted by the proposed candidate molecule are in the preprint link above. 
-
-
-## Biomarker discovery <a name="biomarker"></a>
-
-**Deep biomarkers of human aging** [[online predictor](http://www.aging.ai/)][[paper](https://www.ncbi.nlm.nih.gov/pubmed/27191382)]
-
-From the abstract: "One of the major impediments in human aging research is the absence of a comprehensive and actionable set of biomarkers that may be targeted and measured to track the effectiveness of therapeutic interventions. In this study, we designed a modular ensemble of 21 deep neural networks (DNNs) of varying depth, structure and optimization to predict human chronological age using a basic blood test. "
-
-## Generic 'omics tools <a name="omics"></a>
+This is a collection of mostly NLP inspired models for modelling biological sequences, such as proteins or genes. Perhaps these models should be moved to other sections as language models in biology become more mainstream.
 
 **Continuous Distributed Representation of Biological Sequences for Deep Genomics and Deep Proteomics**[[github](https://github.com/ehsanasgari/Deep-Proteomics)][[paper](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0141287)]
 
@@ -135,8 +90,6 @@ The GitHub summary reads: "We introduce a new representation for biological sequ
 **pysster: Learning Sequence and Structure Motifs in DNA and RNA Sequences using Convolutional Neural Networks**[[github](https://github.com/budach/pysster)][[preprint](https://www.biorxiv.org/content/early/2017/12/06/230086)]
 
 A toolbox for learning motifs from DNA/RNA sequence data using convolutional neural networks, this Tensorflow-based library supposedly runs on GPU out of the box and also does things like hyperparameter optimization and visualizations of what different network layers are learning.
-
-### NLP inspired <a name='omics_nlp'></a>
 
 **Unified rational protein engineering with sequence-based deep representation learning** [[github](https://github.com/churchlab/UniRep)][[paper](https://www.nature.com/articles/s41592-019-0598-1)]
 
@@ -166,12 +119,6 @@ Here, the same team from Meta that introduced the ESM-1 model (above) show that 
 A large-scale effort to train and benchmark Transformer models on protein sequences, this project even has provided several of its models to the public on the HuggingFace model hub. The abstract starts: *"Computational biology and bioinformatics provide vast data gold-mines from protein sequences, ideal for Language Models (LMs) taken from Natural Language Processing (NLP). These LMs reach for new prediction frontiers at low inference costs. Here, we trained two auto-regressive language models (Transformer-XL, XLNet) and two auto-encoder models (Bert, Albert) on data from UniRef and BFD containing up to 393 billion amino acids (words) from 2.1 billion protein sequences (22- and 112-times the entire English Wikipedia). The LMs were trained on the Summit supercomputer at Oak Ridge National Laboratory (ORNL), using 936 nodes (total 5616 GPUs) and one TPU Pod (V3-512 or V3-1024)."*
 
 
-**Extraction of organic chemistry grammar from unsupervised learning of chemical reactions** [[github](https://github.com/rxn4chemistry/rxnmapper)][[paper](https://advances.sciencemag.org/content/7/15/eabe4166)]
-
-
-This package does atom mapping for chemistry using transformer networks. From the abstract: *During the last few hundred years, chemists compiled the language of chemical synthesis inferring a series of “reaction rules” from knowing how atoms rearrange during a chemical transformation, a process called atom-mapping. Atom-mapping is a laborious experimental task and, when tackled with computational methods, requires continuous annotation of chemical reactions and the extension of logically consistent directives. Here, we demonstrate that Transformer Neural Networks learn atom-mapping information between products and reactants without supervision or human labeling. Using the Transformer attention weights, we build a chemically agnostic, attention-guided reaction mapper and extract coherent chemical grammar from unannotated sets of reactions.*
-
-
 **Effective gene expression prediction from sequence by integrating long-range interactions** [[github](https://github.com/deepmind/deepmind-research/tree/master/enformer)][[tensorflow hub](https://tfhub.dev/deepmind/enformer/1)][[paper](https://www.biorxiv.org/content/10.1101/2021.04.07.438649v1)]
 
 
@@ -182,17 +129,60 @@ Can a transformer architecture help solve the hard problem of relating genomic e
 
 Like the earlier Enformer, this is a transformer model for nucleotides (DNA or RNA), but with different design and goals. Whereas Enformer is a pre-trained model for mammalian genomes (human and mouse), GenSLM is intended as a foundation model for less complex genomes, such as bacteria and viruses. It is pre-trained on 110 million prokaryotic (bacterial and archaeal) genomes using a GPT-style ("predict the next token") loss. The tokens are codons (nucleotide triplets), and consequently, the trained model can be "prompted" in GPT-3 fashion with codons. The foundation model can be further finetuned on a subset of genomes ("evolutionary finetuning"), in the case of this paper 1.5 million sequences SARS-CoV-2 genomes, yielding a SARS-CoV-2 specific language model, which contains implicit knowledge of the virus' evolutionary landscape and can be used to identify variants of concern. A further interesting twist in this paper is that long-range interactions, which Enformer tried to solve with convolutions coupled with self-attention, are modelled using diffusion models (á la Stable Diffusion.)
 
-### Multi-omics integration <a name='integration'></a>
+
+## Multi-omics integration <a name='integration'></a>
 
 **Rise of Deep Learning for Genomic, Proteomic, and Metabolomic Data Integration in Precision Medicine.** [[paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6207407/)]
 
 A review paper about the potential of deep learning for multi-omics data integration.
 
-## Proteomics <a name="proteomics"></a>
+## Protein biology <a name="protein_biology"></a>
+
+This category is divided into sub-categories.
+
+### Structure prediction <a name='protein_biology_structure_prediction'></a>
+
+**Highly accurate protein structure prediction with AlphaFold** [[github](https://github.com/deepmind/alphafold)][[paper](https://www.nature.com/articles/s41586-021-03819-2)]
+
+This one probably needs no introduction. DeepMind released the first version of its protein-folding method AlphaFold in 2018, when it won the prestigious CASP competition. A completely redesigned version, described in this paper (and sometimes called AlphaFold2) won the same competition in 2020 with a very wide margin. The new version used a component called the "Evoformer", a kind of transformer which iteratively processed a set of aligned protein sequences and a matrix of pairwise interaction between amino acids to generate a representation that can be used as input to a folding module, which uses a specific type of attention called "Invariant pointwise attention". The original AlphaFold paper has been followed by many papers that show how new tasks can be solved by modifying the model in different ways.
+
+**OpenFold** [[github](https://github.com/aqlaboratory/openfold)]
+
+This is a Pytorch-based, open-source reimplementation of AlphaFold, which reproduces practically all of the functionality. Before AlphaFold made its model weights generally available, OpenFold was a way to train your own folding model.
+
+**MiniFold: a re-implementation of DeepMind's AlphaFold** [[github](https://github.com/EricAlcaide/MiniFold)]
+
+One of the more spectacular successes of deep learning in biology in the recent years was when DeepMind's AlphaFold model won the CASP13 protein structure prediction challenge. It was originally not listed on this page because there was no open implementation, but this has since changed. In any case, MiniFold was an attempt to re-implement AlphaFold in a somewhat more minimalistic way.
+
+**Evolutionary-scale prediction of atomic level protein structure with a language model** [[github](https://github.com/facebookresearch/esm#esmfold)][[preprint](https://www.biorxiv.org/content/10.1101/2022.07.20.500902v2)]
+
+The Meta research group that created ESM-1, ESM-MSA and other models described elsewhere in this document here show that large language models can also be used to do protein structure prediction. Given enough parameters and training data, the trained model starts to implicitly learn information about 3D conformation. The authors claim that this LLM-only approach (i.e. it does not use multiple sequence alignments or backbone inputs) is up to 60x faster than other approaches, such as AlphaFold. They use the model to make structure predictions for 600 million metagenomic (environmental DNA) samples.
+
+**Protein Loop Modeling Using Deep Generative Adversarial Network**[[paper](https://ieeexplore.ieee.org/abstract/document/8372069/)][[website](https://zhaoyu.li/loop_modeling_gan.html)]
+
+From the abstract: "Biology and medicine have a long-standing interest in computational structure prediction and modeling of proteins. There are often missing regions or regions that need to be remodeled in protein structures. The process of predicting particular missing regions in a protein structure is called loop modeling. In this paper, we propose a generative adversarial network (GAN) in deep learning for loop modeling using the idea of image inpainting. The generative network is to capture the context of the loop region and predict the missing area. The adversarial network is to make the prediction look real and provide gradients to the generative network. The proposed network was evaluated on a common benchmark for loop modeling. Experiments show that our method can successfully predict the loop region and has achieved better performance than the state-of-the-art tools. To our knowledge, this work represents the first attempt of using GAN for any bioinformatics studies."
 
 **Pcons2 – Improved Contact Predictions Using the Recognition of Protein Like Contact Patterns** [[web interface](http://c2.pcons.net/)]
 
 Here, a “deep random forest” with five layers is used to improve predictions of which residues (amino acids) in a protein are physically interacting which each other. This is useful for predicting the overall structure of the protein (a very hard problem.)
+
+### Protein design <a name='protein_biology_design'></a>
+
+**Low-N protein engineering with data-efficient deep learning** [[preprint](https://www.nature.com/articles/s41592-021-01100-y)]
+
+Based on the UniRep model (described elsewhere in this document), the authors introduce a machine learning paradigm or workflow for training models predicting protein properties and designing novel sequence variants based on a very small number of labelled samples (as few as 20-30). In this paradigm, a base model is trained in an unsupervised manner on a large set of diverse protein sequences (like in the original UniRep paper), and then this model is trained further with the same loss function but on a more restricted family of proteins which is evolutionarily related to the target protein. This procedure is called "evotuning" or evolutionary finetuning. After this step, the authors show that supervised learning using the representation created by the evotuned model often works well given only a small number of labelled samples. With the supervised model in hand, in silico directed evolution can be used to design a new variant of the target protein with desired characteristics.
+
+
+**ProteinGAN: Expanding functional protein sequence space using generative adversarial networks** [[code](https://github.com/biomatterdesigns/ProteinGAN)][[preprint](https://www.biorxiv.org/content/early/2019/10/04/789719.full.pdf)]
+
+From the abstract: "De novo protein design for catalysis of any desired chemical reaction is a long standing goal in protein engineering, due to the broad spectrum of technological, scientific and medical applications. Currently, mapping protein sequence to protein function is, however, neither computationionally nor experimentally tangible. Here we developed ProteinGAN, a specialised variant of the generative adversarial network that is able to 'learn' natural protein sequence diversity and enables the generation of functional protein sequences. ProteinGAN learns the evolutionary relationships of protein sequences directly from the complex multidimensional amino acid sequence space and creates new, highly diverse sequence variants with natural-like physical properties. Using malate dehydrogenase as a template enzyme, we show that 24% of the ProteinGAN-generated and experimentally tested sequences are soluble and display wild-type level catalytic activity in the tested conditions in vitro, even in highly mutated (>100 mutations) sequences. ProteinGAN therefore demonstrates the potential of artificial intelligence to rapidly generate highly diverse novel functional proteins within the allowed biological constraints of the sequence space."
+
+**Robust deep learning based protein sequence design using ProteinMPNN** [[code](https://github.com/dauparas/ProteinMPNN)][[preprint](https://www.biorxiv.org/content/10.1101/2022.06.03.494563v1)]
+
+This work presents a method for designing a protein sequence that is predicted to fold into a specified conformation, i.e. in a way the reverse of AlphaFold: going from structure to sequence. This is achieved by using a type of graph neural network, a message passing neural network (MPNN.) The diversity of the generated sequences can be tuned, and the authors test the performance of the method both using AlphaFold and experimentally.
+
+### Function prediction <a name='protein_biology_function_prediction'></a>
+
 
 **A Deep Learning Model for Predicting Tumor Suppressor Genes and Oncogenes from PDB Structure** [[github](https://github.com/tavanaei/Cancer-Suppressor-Gene-Deep-Learning)][[bioRxiv preprint](https://www.biorxiv.org/content/early/2017/10/22/177378)]
 
@@ -206,74 +196,10 @@ Predicts RNA-binding proteins using CNNs.
 
 From the abstract: "We present an embedding of natural protein sequences using a Variational Auto-Encoder and use it to predict how mutations affect protein function. We use this unsupervised approach to cluster natural variants and learn interactions between sets of positions within a protein. This approach generally performs better than baseline methods that consider no interactions within sequences, and in some cases better than the state-of-the-art approaches that use the inverse-Potts model. This generative model can be used to computationally guide exploration of protein sequence space and to better inform rational and automatic protein design."
 
-**Protein Loop Modeling Using Deep Generative Adversarial Network**[[paper](https://ieeexplore.ieee.org/abstract/document/8372069/)][[website](https://zhaoyu.li/loop_modeling_gan.html)]
-
-From the abstract: "Biology and medicine have a long-standing interest in computational structure prediction and modeling of proteins. There are often missing regions or regions that need to be remodeled in protein structures. The process of predicting particular missing regions in a protein structure is called loop modeling. In this paper, we propose a generative adversarial network (GAN) in deep learning for loop modeling using the idea of image inpainting. The generative network is to capture the context of the loop region and predict the missing area. The adversarial network is to make the prediction look real and provide gradients to the generative network. The proposed network was evaluated on a common benchmark for loop modeling. Experiments show that our method can successfully predict the loop region and has achieved better performance than the state-of-the-art tools. To our knowledge, this work represents the first attempt of using GAN for any bioinformatics studies."
-
-**Low-N protein engineering with data-efficient deep learning** [[preprint](https://www.nature.com/articles/s41592-021-01100-y)]
-
-Based on the UniRep model (described elsewhere in this document), the authors introduce a machine learning paradigm or workflow for training models predicting protein properties and designing novel sequence variants based on a very small number of labelled samples (as few as 20-30). In this paradigm, a base model is trained in an unsupervised manner on a large set of diverse protein sequences (like in the original UniRep paper), and then this model is trained further with the same loss function but on a more restricted family of proteins which is evolutionarily related to the target protein. This procedure is called "evotuning" or evolutionary finetuning. After this step, the authors show that supervised learning using the representation created by the evotuned model often works well given only a small number of labelled samples. With the supervised model in hand, in silico directed evolution can be used to design a new variant of the target protein with desired characteristics.
-
 **Structure-Based Function Prediction using Graph Convolutional Networks** [[preprint](https://www.biorxiv.org/content/biorxiv/early/2019/10/04/786236.full.pdf)]
 
 From the abstract: "We present a deep learning Graph Convolutional Network (GCN) trained on sequence and structural data and evaluate it on ~40k proteins with known structures and functions from the Protein Data Bank (PDB). Our GCN predicts functions more accurately than Convolutional Neural Networks trained on sequence data alone and competing methods. Feature extraction via a language model removes the need for constructing multiple sequence alignments or feature engineering. Our model learns general structure-function relationships by robustly predicting functions of proteins with ≤ 30% sequence identity to the training set. Using class activation mapping, we can automatically identify structural regions at the residue-level that lead to each function prediction for every protein confidently predicted, advancing site-specific function prediction."
 
-**Highly accurate protein structure prediction with AlphaFold** [[github](https://github.com/deepmind/alphafold)][[paper](https://www.nature.com/articles/s41586-021-03819-2)]
-
-This one probably needs no introduction. DeepMind released the first version of its protein-folding method AlphaFold in 2018, when it won the prestigious CASP competition. A completely redesigned version, described in this paper (and sometimes called AlphaFold2) won the same competition in 2020 with a very wide margin. The new version used a component called the "Evoformer", a kind of transformer which iteratively processed a set of aligned protein sequences and a matrix of pairwise interaction between amino acids to generate a representation that can be used as input to a folding module, which uses a specific type of attention called "Invariant pointwise attention". The original AlphaFold paper has been followed by many papers that show how new tasks can be solved by modifying the model in different ways.
-
-**OpenFold** [[github](https://github.com/aqlaboratory/openfold)]
-
-This is a Pytorch-based, open-source reimplementation of AlphaFold, which reproduces practically all of the functionality. Before AlphaFold made its model weights generally available, OpenFold was a way to train your own folding model.
-
-
-**MiniFold: a re-implementation of DeepMind's AlphaFold** [[github](https://github.com/EricAlcaide/MiniFold)]
-
-One of the more spectacular successes of deep learning in biology in the recent years was when DeepMind's AlphaFold model won the CASP13 protein structure prediction challenge. It was originally not listed on this page because there was no open implementation, but this has since changed. In any case, MiniFold was an attempt to re-implement AlphaFold in a somewhat more minimalistic way.
-
-
-**Evolutionary-scale prediction of atomic level protein structure with a language model** [[github](https://github.com/facebookresearch/esm#esmfold)][[preprint](https://www.biorxiv.org/content/10.1101/2022.07.20.500902v2)]
-
-The Meta research group that created ESM-1, ESM-MSA and other models described elsewhere in this document here show that large language models can also be used to do protein structure prediction. Given enough parameters and training data, the trained model starts to implicitly learn information about 3D conformation. The authors claim that this LLM-only approach (i.e. it does not use multiple sequence alignments or backbone inputs) is up to 60x faster than other approaches, such as AlphaFold. They use the model to make structure predictions for 600 million metagenomic (environmental DNA) samples.
-
-
-## Metabolomics <a name="metabolomics"></a>
-
-**Deep Learning Accurately Predicts Estrogen Receptor Status in Breast Cancer Metabolomics Data** [[code](http://pubs.acs.org/doi/suppl/10.1021/acs.jproteome.7b00595/suppl_file/pr7b00595_si_001.pdf)][[paper](http://pubs.acs.org/doi/full/10.1021/acs.jproteome.7b00595)]
-
-Classification algorithms for metabolomics data with respect to estrogen receptor status are compared, and the best performing algorithm is an autoencoder-based feedforward network with parameters tuned using H2O's R interface.
-
-### Generative models <a name='generative'></a>
-
-In many cases, it can be useful to generate synthetic data that resembles real data in order to boost dataset sizes or avoid violating patient privacy. Here, some of these approaches are listed.
-
-**Privacy-preserving generative deep neural networks support clinical data sharing** [[Github](https://github.com/greenelab/SPRINT_gan)][[bioRxiv preprint](https://www.biorxiv.org/content/early/2017/11/15/159756)]
-
-This describes a clever idea where generative adversarial networks (GANs) are used to synthesize data that closely resembles actual data measured on study participants, but which cannot be traced back to a specific subject. The latter aspect, called differential privacy, is incorporated into the method by design and gives strong guarantees of the likelihood that a subject could be identified as a member of a trial.
-
-**Creating artificial human genomes using generative models** [[preprint](https://www.biorxiv.org/content/biorxiv/early/2019/10/07/769091.full.pdf)]
-
-The authors compare Restricted Boltzmann Machines (RBM) and Generative Adversarial Networks (GAN) as tools for creating synthetic human genomes.
-
-**CellBender remove-background: a deep generative model for unsupervised removal of background noise from scRNA-seq datasets** [[code](https://github.com/broadinstitute/CellBender)][[preprint](https://www.biorxiv.org/content/biorxiv/early/2019/10/03/791699.full.pdf)]
-
-The authors present a generative model for removing statistical background noise in single-cell RNA-seq datasets.
-
-**scVAE: Single-cell variational auto-encoders** [[code](https://github.com/scvae/scvae)][[preprint](https://www.biorxiv.org/content/10.1101/318295v4)]
-
-scVAE is a command-line tool for modelling single-cell transcript counts using variational auto-encoders. Using variational autoencoders it is possible both to model the data in a more compact way and to generate realistic synthetic data based on the distribution that the real data come from.
-
-**Realistic in silico generation and augmentation of single cell RNA-seq data using Generative Adversarial Neural Networks** [[code](https://github.com/imsb-uke/scGAN)][[preprint](https://www.biorxiv.org/content/10.1101/390153v2)]
-
-From the abstract: "A fundamental problem in biomedical research is the low number of observations available, mostly due to a lack of available biosamples, prohibitive costs, or ethical reasons. Augmenting few real observations with generated in silico samples could lead to more robust analysis results and a higher reproducibility rate. Here we propose the use of conditional single cell Generative Adversarial Neural Networks (cscGANs) for the realistic generation of single cell RNA-seq data. cscGANs learn non-linear gene-gene dependencies from complex, multi cell type samples and use this information to generate realistic cells of defined types."
-
-**ProteinGAN: Expanding functional protein sequence space using generative adversarial networks** [[code](https://github.com/biomatterdesigns/ProteinGAN)][[preprint](https://www.biorxiv.org/content/early/2019/10/04/789719.full.pdf)]
-
-From the abstract: "De novo protein design for catalysis of any desired chemical reaction is a long standing goal in protein engineering, due to the broad spectrum of technological, scientific and medical applications. Currently, mapping protein sequence to protein function is, however, neither computationionally nor experimentally tangible. Here we developed ProteinGAN, a specialised variant of the generative adversarial network that is able to 'learn' natural protein sequence diversity and enables the generation of functional protein sequences. ProteinGAN learns the evolutionary relationships of protein sequences directly from the complex multidimensional amino acid sequence space and creates new, highly diverse sequence variants with natural-like physical properties. Using malate dehydrogenase as a template enzyme, we show that 24% of the ProteinGAN-generated and experimentally tested sequences are soluble and display wild-type level catalytic activity in the tested conditions in vitro, even in highly mutated (>100 mutations) sequences. ProteinGAN therefore demonstrates the potential of artificial intelligence to rapidly generate highly diverse novel functional proteins within the allowed biological constraints of the sequence space."
-
-**Robust deep learning based protein sequence design using ProteinMPNN** [[code](https://github.com/dauparas/ProteinMPNN)][[preprint](https://www.biorxiv.org/content/10.1101/2022.06.03.494563v1)]
-
-This work presents a method for designing a protein sequence that is predicted to fold into a specified conformation, i.e. in a way the reverse of AlphaFold: going from structure to sequence. This is achieved by using a type of graph neural network, a message passing neural network (MPNN.) The diversity of the generated sequences can be tuned, and the authors test the performance of the method both using AlphaFold and experimentally.
 
 ## Genomics <a name="genomics"></a>
 
@@ -460,13 +386,87 @@ Active learning, a framework addressing how to select training examples in order
 
 This approach models single-cell gene expression data directly from counts without initial normalization, and performs clustering in the latent space. Since it is based on a variational autoencoder, it can also be used to generate synthetic single-cell data by sampling from the latent distribution.
 
+**CellBender remove-background: a deep generative model for unsupervised removal of background noise from scRNA-seq datasets** [[code](https://github.com/broadinstitute/CellBender)][[preprint](https://www.biorxiv.org/content/biorxiv/early/2019/10/03/791699.full.pdf)]
+
+The authors present a generative model for removing statistical background noise in single-cell RNA-seq datasets.
+
+**scVAE: Single-cell variational auto-encoders** [[code](https://github.com/scvae/scvae)][[preprint](https://www.biorxiv.org/content/10.1101/318295v4)]
+
+scVAE is a command-line tool for modelling single-cell transcript counts using variational auto-encoders. Using variational autoencoders it is possible both to model the data in a more compact way and to generate realistic synthetic data based on the distribution that the real data come from.
+
+**Realistic in silico generation and augmentation of single cell RNA-seq data using Generative Adversarial Neural Networks** [[code](https://github.com/imsb-uke/scGAN)][[preprint](https://www.biorxiv.org/content/10.1101/390153v2)]
+
+From the abstract: "A fundamental problem in biomedical research is the low number of observations available, mostly due to a lack of available biosamples, prohibitive costs, or ethical reasons. Augmenting few real observations with generated in silico samples could lead to more robust analysis results and a higher reproducibility rate. Here we propose the use of conditional single cell Generative Adversarial Neural Networks (cscGANs) for the realistic generation of single cell RNA-seq data. cscGANs learn non-linear gene-gene dependencies from complex, multi cell type samples and use this information to generate realistic cells of defined types."
+
 **Knowledge-primed neural networks enable biologically interpretable deep learning on single-cell sequencing data** [[code](https://github.com/epigen/KPNN)][[preprint](https://www.biorxiv.org/content/biorxiv/early/2019/10/07/794503.full.pdf)]
 
 From the abstract: "Deep learning has emerged as a powerful methodology for predicting a variety of complex biological phenomena. However, its utility for biological discovery has so far been limited, given that generic deep neural networks provide little insight into the biological mechanisms that underlie a successful prediction. Here we demonstrate
 deep learning on biological networks, where every node has a molecular equivalent (such as a protein or gene) and every edge has a mechanistic interpretation (e.g., a regulatory interaction along a signaling pathway). With knowledge-primed neural networks (KPNNs), we exploit the ability of deep learning algorithms to assign meaningful weights to multi-layered networks for interpretable deep learning."
 
+## Chemoinformatics and drug discovery <a name="chemo"></a>
 
-### Population genetics <a name='genomics_pop'></a>
+**Neural graph fingerprints** [[github](https://github.com/HIPS/neural-fingerprint)]
+
+A convolutional net that can learn features which are useful for predicting properties of novel molecules; “molecular fingerprints”. The net works on a graph where atoms are nodes and bonds are edges. Developed by the group of Ryan Adams, who used to co-host the very good [Talking Machines](http://www.thetalkingmachines.com/) podcast.
+
+**Automatic chemical design using a data-driven continuous representation of molecules** [[github](https://github.com/aspuru-guzik-group/chemical_vae)][[preprint](https://arxiv.org/abs/1610.02415)]
+
+Abstract starts: "We report a method to convert discrete representations of molecules to and from a multidimensional continuous representation. This model allows us to generate new molecules for efficient exploration and optimization through open-ended spaces of chemical compounds."
+
+**Objective-Reinforced Generative Adversarial Networks (ORGAN)** [[github](https://github.com/gablg1/ORGAN)][[preprint](https://arxiv.org/abs/1705.10843)]
+
+A method that combines generative models with reinforcement learning to direct the generative process towards some desired target, ORGAN is a generic method for discrete data but is in this case exemplified by a drug discovery use case.
+
+**Extraction of organic chemistry grammar from unsupervised learning of chemical reactions** [[github](https://github.com/rxn4chemistry/rxnmapper)][[paper](https://advances.sciencemag.org/content/7/15/eabe4166)]
+
+
+This package does atom mapping for chemistry using transformer networks. From the abstract: *During the last few hundred years, chemists compiled the language of chemical synthesis inferring a series of “reaction rules” from knowing how atoms rearrange during a chemical transformation, a process called atom-mapping. Atom-mapping is a laborious experimental task and, when tackled with computational methods, requires continuous annotation of chemical reactions and the extension of logically consistent directives. Here, we demonstrate that Transformer Neural Networks learn atom-mapping information between products and reactants without supervision or human labeling. Using the Transformer attention weights, we build a chemically agnostic, attention-guided reaction mapper and extract coherent chemical grammar from unannotated sets of reactions.*
+
+**Molecular De-Novo Design through Deep Reinforcement Learning** [[github](https://github.com/MarcusOlivecrona/REINVENT)][[preprint](https://arxiv.org/abs/1704.07555)]
+
+PyTorch sequence generation model that uses reinforcement learning. Nice widget showing training progress and molecules generated during training is shown on the Github page. Abstract starts: "This work introduces a method to tune a sequence-based generative model for molecular de novo design that through augmented episodic likelihood can learn to generate structures with certain specified desirable properties. We demonstrate how this model can execute a range of tasks such as generating analogues to a query structure and generating compounds predicted to be active against a biological target."
+
+**One-shot learning models for drug discovery and DeepChem** [[github](https://github.com/deepchem/deepchem)][[Python library](http://deepchem.io/)][[paper](http://pubs.acs.org/doi/abs/10.1021/acscentsci.6b00367)]
+
+DeepChem is a "... [P]ython library that aims to make the use of machine-learning in drug discovery straightforward and convenient" which checks a lot of boxes when it comes to advanced deep learning: one-shot learning, graph convolutional networks, learning from less data, and LSTM embeddings. According to the GitHub site, "DeepChem aims to provide a high quality open-source toolchain that democratizes the use of deep-learning in drug discovery, materials science, and quantum chemistry."
+
+**The cornucopia of meaningful leads: Applying deep adversarial autoencoders for new molecule development in oncology** [[github](https://github.com/spoilt333/onco-aae)][[paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5355231/)]
+
+Explores the use of generative adversarial networks (GAN) in generating new molecular leads for drug candidates. In analogy to generating images or video that "look like" they come from some specified distribution, perhaps with some conditioning like "show me a cat picture", the authors reason that novel drug-like molecular structures can be generated with cues about what kind of drug one wants. Here they explore a specific type of generative network, an adversarial autoencoder (AAE), and adapt it into what they call a "artificially-intelligent drug discovery engine."
+
+**Deep learning enables rapid identification of potent DDR1 kinase inhibitors** [[github](https://github.com/insilicomedicine/gentrl)][[paper](https://www.nature.com/articles/s41587-019-0224-x)] In this paper from InSilico Medicine, which came out to some fanfare in 2019, an approach called GENTRL (Generative Tensorial Reinforcement Learning) was used to do rapid discovery of small-molecule inhibitors towards an interesting target. Using this method, the authors were able to come up with a candidate molecule in just 21 days. The model uses an initial generative step with a variational autoencoder and a reinforcement learning procedure for exploring the chemical space. They use an interesting loss function based on Kohonen self-organizing maps. Tensor decomposition was used to encode the relationship between chemical structures and properties. 
+
+**Deep Genomics Nominates Industry’s First AI-Discovered Therapeutic Candidate** [[preprint](https://www.biorxiv.org/content/biorxiv/early/2019/09/17/693572.full.pdf)]
+
+In September 2019, Deep Genomics announced that its deep learning-based platform had identified a therapeutic target and a corresponding drug candidate. The details of the disease-causing mechanism targeted by the proposed candidate molecule are in the preprint link above. 
+
+
+## Biomarker discovery <a name="biomarker"></a>
+
+**Deep biomarkers of human aging** [[online predictor](http://www.aging.ai/)][[paper](https://www.ncbi.nlm.nih.gov/pubmed/27191382)]
+
+From the abstract: "One of the major impediments in human aging research is the absence of a comprehensive and actionable set of biomarkers that may be targeted and measured to track the effectiveness of therapeutic interventions. In this study, we designed a modular ensemble of 21 deep neural networks (DNNs) of varying depth, structure and optimization to predict human chronological age using a basic blood test. "
+
+
+## Metabolomics <a name="metabolomics"></a>
+
+**Deep Learning Accurately Predicts Estrogen Receptor Status in Breast Cancer Metabolomics Data** [[code](http://pubs.acs.org/doi/suppl/10.1021/acs.jproteome.7b00595/suppl_file/pr7b00595_si_001.pdf)][[paper](http://pubs.acs.org/doi/full/10.1021/acs.jproteome.7b00595)]
+
+Classification algorithms for metabolomics data with respect to estrogen receptor status are compared, and the best performing algorithm is an autoencoder-based feedforward network with parameters tuned using H2O's R interface.
+
+## Generative models <a name='generative'></a>
+
+In many cases, it can be useful to generate synthetic data that resembles real data in order to boost dataset sizes or avoid violating patient privacy. Here, some of these approaches are listed.
+
+**Privacy-preserving generative deep neural networks support clinical data sharing** [[Github](https://github.com/greenelab/SPRINT_gan)][[bioRxiv preprint](https://www.biorxiv.org/content/early/2017/11/15/159756)]
+
+This describes a clever idea where generative adversarial networks (GANs) are used to synthesize data that closely resembles actual data measured on study participants, but which cannot be traced back to a specific subject. The latter aspect, called differential privacy, is incorporated into the method by design and gives strong guarantees of the likelihood that a subject could be identified as a member of a trial.
+
+**Creating artificial human genomes using generative models** [[preprint](https://www.biorxiv.org/content/biorxiv/early/2019/10/07/769091.full.pdf)]
+
+The authors compare Restricted Boltzmann Machines (RBM) and Generative Adversarial Networks (GAN) as tools for creating synthetic human genomes.
+
+## Population genetics <a name='genomics_pop'></a>
 
 **Deep learning for population genetic inference** [[code](https://sourceforge.net/projects/evonet/)][[paper](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004845)]
 
@@ -474,16 +474,10 @@ deep learning on biological networks, where every node has a molecular equivalen
 
 This weirdly-named paper addresses the frequently encountered problem in genomics where the number of features is much larger than the number of training examples. Here, it is addressed in the context of SNPs (single-nucleotide polymorphisms, genetic variations between individuals). The authors propose a new network parametrization that reduces the number of free parameters using a multi-task architecture which tries to learn a useful embedding of the input features.
 
-### Systems biology<a name='sysbio'></a>
+## Systems biology<a name='sysbio'></a>
 
 **Using deep learning to model the hierarchical structure and function of a cell** [[web server](http://d-cell.ucsd.edu)][[paper](https://www.nature.com/articles/nmeth.4627/)]
 
 In this ambitious paper, the authors attempt to construct an interpretable neural network model (VNN; visible neural network) of a eukaryotic cell based on millions of genotype-phenotype associations. The network is built in a hierarchy with 12 levels, where each level is supposed to reflect a biologically meaningful level of organization. The resulting model can predict, for a given genetic perturbation, what the resulting phenotype is likely to be.
 
-## Neuroscience <a name='neuro'></a>
 
-There are potentially lots of implementations that could go here.
-
-**Deep learning for neuroimaging: a validation study** [[paper](http://journal.frontiersin.org/article/10.3389/fnins.2014.00229/abstract)]
-
-**SPINDLE: SPINtronic deep learning engine for large-scale neuromorphic computing** [[paper](http://dl.acm.org/citation.cfm?id=2627625)]
