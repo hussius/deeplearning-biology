@@ -138,6 +138,11 @@ A toolbox for learning motifs from DNA/RNA sequence data using convolutional neu
 
 ### NLP inspired <a name='omics_nlp'></a>
 
+**Unified rational protein engineering with sequence-based deep representation learning** [[github](https://github.com/churchlab/UniRep)][[paper](https://www.nature.com/articles/s41592-019-0598-1)]
+
+The authors introduce UniRep, an early language model for protein sequences based on mLSTMs (multiplicative LSTMs). It's trained on 24 million protein sequences from UniRef50 and can be used to convert protein sequences into numerical vector representations that contain information about protein properties. For example, the representations can be used to train downstream predictors of protein stability and function. UniRep can also be used as a "babbler", or generative model, to design new proteins.
+
+
 **Natural language predicts viral escape** [[github](https://github.com/brianhie/viral-mutation)][[paper](https://science.sciencemag.org/content/371/6526/248.17.full)]
 
 This paper attempts to model how viruses evade being detected by the immune system ("viral escape") by using a language model on amino acids implemented with a BiLSTM-based networks. They posit that a sequence that enables escape from the immune system should have high viability, which they liken to the grammaticality of a sentence, while also having different "semantics", i.e. looking different from an antigenic point of view. The grammaticality is learned in the final layer as a prediction task, whereas the semantics are extracted from the representation in the next to last layer.
@@ -204,6 +209,10 @@ From the abstract: "We present an embedding of natural protein sequences using a
 **Protein Loop Modeling Using Deep Generative Adversarial Network**[[paper](https://ieeexplore.ieee.org/abstract/document/8372069/)][[website](https://zhaoyu.li/loop_modeling_gan.html)]
 
 From the abstract: "Biology and medicine have a long-standing interest in computational structure prediction and modeling of proteins. There are often missing regions or regions that need to be remodeled in protein structures. The process of predicting particular missing regions in a protein structure is called loop modeling. In this paper, we propose a generative adversarial network (GAN) in deep learning for loop modeling using the idea of image inpainting. The generative network is to capture the context of the loop region and predict the missing area. The adversarial network is to make the prediction look real and provide gradients to the generative network. The proposed network was evaluated on a common benchmark for loop modeling. Experiments show that our method can successfully predict the loop region and has achieved better performance than the state-of-the-art tools. To our knowledge, this work represents the first attempt of using GAN for any bioinformatics studies."
+
+**Low-N protein engineering with data-efficient deep learning** [[preprint](https://www.nature.com/articles/s41592-021-01100-y)]
+
+Based on the UniRep model (described elsewhere in this document), the authors introduce a machine learning paradigm or workflow for training models predicting protein properties and designing novel sequence variants based on a very small number of labelled samples (as few as 20-30). In this paradigm, a base model is trained in an unsupervised manner on a large set of diverse protein sequences (like in the original UniRep paper), and then this model is trained further with the same loss function but on a more restricted family of proteins which is evolutionarily related to the target protein. This procedure is called "evotuning" or evolutionary finetuning. After this step, the authors show that supervised learning using the representation created by the evotuned model often works well given only a small number of labelled samples. With the supervised model in hand, in silico directed evolution can be used to design a new variant of the target protein with desired characteristics.
 
 **Structure-Based Function Prediction using Graph Convolutional Networks** [[preprint](https://www.biorxiv.org/content/biorxiv/early/2019/10/04/786236.full.pdf)]
 
