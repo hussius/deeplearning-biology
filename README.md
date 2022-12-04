@@ -23,11 +23,11 @@ You might also want to refer to the [awesome deepbio](https://github.com/gokcene
     - [Non-coding RNA](#genomics_non-coding)
     - [Methylation](#genomics_methylation)
     - [Single-cell applications](#genomics_single-cell)
-    - [Population genetics](#genomics_pop)
   - [Chemoinformatics and drug discovery](#chemo)
   - [Biomarker discovery](#biomarker)
   - [Metabolomics](#metabolomics)
   - [Generative models](#generative)
+  - [Population genetics](#genomics_pop)
   - [Systems biology](#sysbio)
 
 ## Reviews <a name="reviews"></a>
