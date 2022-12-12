@@ -405,6 +405,10 @@ deep learning on biological networks, where every node has a molecular equivalen
 
 ## Chemoinformatics and drug discovery <a name="chemo"></a>
 
+**Learning substructure invariance for out-of-distribution molecular representations** [[github](https://github.com/yangnianzu0515/MoleOOD)][[paper](https://openreview.net/forum?id=2nWUNTnFijm)] 
+
+A general molecular representation learning framework entitled MoleOOD which can incorporate any existing MRL method as backbone to improve their generalization ability against distribution shifts. Specifically, MoleOOD devises a new learning scheme with its equivalent practical instantiation. MoleOOD also develops an environment inference model to identify each molecule’s corresponding environment without need of manual specifications of environments.
+
 **Neural graph fingerprints** [[github](https://github.com/HIPS/neural-fingerprint)]
 
 A convolutional net that can learn features which are useful for predicting properties of novel molecules; “molecular fingerprints”. The net works on a graph where atoms are nodes and bonds are edges. Developed by the group of Ryan Adams, who used to co-host the very good [Talking Machines](http://www.thetalkingmachines.com/) podcast.
