@@ -124,6 +124,12 @@ A large-scale effort to train and benchmark Transformer models on protein sequen
 
 Can a transformer architecture help solve the hard problem of relating genomic enhancers to gene expression? It is experimentally laborious to connect distal enhancers to genes, and the presence of many long-range interactions has made it challenging to learn them from data via correlations (due to multiple testing), convolutional networks (too short receptive fields) or recurrent networks (hard to keep a long enough memory.) Now researchers at Deep Mind, Calico and Google have introduced the "enhancer transformer", ie Enformer, which can leverage the self-attention mechanism to learn enhancer/gene expression interactions with a much longer range than before. Commendably, the authors have not only published the code on github but there is also a pretrained model on Tensorflow Hub.
 
+
+**DNABERT**
+[[github](https://github.com/jerryji1993/DNABERT)][[paper](https://academic.oup.com/bioinformatics/article/37/15/2112/6128680)]
+
+A BERT-like masked language model trained on human DNA sequence using k-mers as tokens.
+
 **GenSLMs: Genome-scale language models reveal SARS-CoV-2 evolutionary dynamics** [[github](https://github.com/ramanathanlab/genslm)][[paper](https://www.biorxiv.org/content/10.1101/2022.10.10.511571v1)]
 
 
@@ -133,6 +139,11 @@ Like the earlier Enformer, this is a transformer model for nucleotides (DNA or R
 **The Nucleotide Transformer: Building and Evaluating Robust Foundation Models for Human Genomics**
 [[github](https://github.com/instadeepai/nucleotide-transformer)][[preprint](https://www.biorxiv.org/content/10.1101/2023.01.11.523679v1)]
 This is work from [Instadeep](https://www.instadeep.com), an ML consultancy that was acquired by BioNTech, the developer of the Pfizer mRNA vaccine against SARS-CoV-2, in Januari 2023. The authors have attempted to build foundation models for nucleotide (i.e., DNA and RNA) sequences based on a broader variety of genomes than in previous efforts, namely >3000 human genomes and 850 non-human genomes from different organisms. These models are meant to be used for transfer learning and are claimed to work well for downstream prediction tasks even in low-data settings. Concretely, the models are BERT-like models with nucleotide 6-mers as tokens.
+
+**GENA-LM**
+[[github](https://github.com/AIRI-Institute/GENA_LM)]
+This is a masked language model trained on human DNA sequence (like e.g. the DNABERT or Nucleotide Transformer above.)
+According to the github page, one difference from DNABERT is that GENA-LM uses BPE tokenization instead of k-mers and can thus handle an input sequence size of about 3000 nucleotides (512 BPE tokens) compared to 510 nucleotides of DNABERT.
 
 ## Multi-omics integration <a name='integration'></a>
 
