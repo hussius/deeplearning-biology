@@ -328,10 +328,13 @@ This paper uses a hybrid of CNNs (to learn good representations) and kernel meth
 
 Like Basset (above) this paper shows how to predict DNA accessibility from sequence using CNNs, but it adds the possibility to leverage RNA sequencing data from different cell types as input. In this way implicit information related to cell type can be "transferred" to the accessibility prediction task.
 
-**Deep learning at base-resolution reveals motif
-syntax of the cis-regulatory code** [[bioRxiv preprint](https://www.biorxiv.org/content/biorxiv/early/2019/08/21/737981.full.pdf)]
+**Deep learning at base-resolution reveals motif syntax of the cis-regulatory code** [[bioRxiv preprint](https://www.biorxiv.org/content/biorxiv/early/2019/08/21/737981.full.pdf)]
 
 Here, a CNN with dilated convolutions is used to learn how different transcription factor binding motifs cooperate. This is the "motif syntax" mentioned in the title. The neural network is trained to predict the signal from a basepair-resolution ChIP assay (ChIP-nexus) and the trained network is then used to infer rules of motif cooperativity.
+
+**DNA language models are powerful zero-shot predictors of genome-wide variant effects** [[github](https://github.com/songlab-cal/gpn)][[preprint](https://www.biorxiv.org/content/10.1101/2022.08.22.504706v2)]
+
+A BERT-like DNA language models, complemented with dilated convolutions to process the raw one-hot encoded inputs but keeping the sequence length fixed, is trained on several different plant genomes and shown to be able to predict variant effects in Arabidopsis thaliana. The authors claim that the model, called Genomic Pretrained Network (GPN), outperforms predictors based on popular conservation scores such as phyloP and phastCons.
 
 ### Non-coding RNA <a name='genomics_non-coding'></a>
 
