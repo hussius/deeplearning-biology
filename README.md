@@ -196,6 +196,10 @@ From the abstract: "De novo protein design for catalysis of any desired chemical
 
 This work presents a method for designing a protein sequence that is predicted to fold into a specified conformation, i.e. in a way the reverse of AlphaFold: going from structure to sequence. This is achieved by using a type of graph neural network, a message passing neural network (MPNN.) The diversity of the generated sequences can be tuned, and the authors test the performance of the method both using AlphaFold and experimentally.
 
+**Learning inverse folding from millions of predicted structures** [[code](https://github.com/facebookresearch/esm#invf)][[preprint](https://www.biorxiv.org/content/10.1101/2022.04.10.487779v2)]
+
+Like ProteinMPNN, this is an inverse folding method that attempts to go from a structure (protein backbone atom coordinates) to a sequence. While ProteinMPNN was trained on experimentally determined strutures, this method, called ESM-IF, uses 12 million structures predicted by AlphaFold as its training material.
+
 ### Function prediction <a name='protein_biology_function_prediction'></a>
 
 
