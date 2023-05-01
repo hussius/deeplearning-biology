@@ -109,6 +109,10 @@ This repo is an implementation of FastAI's ULMFiT language transfer learning mod
 
 In this work from Facebook's (now Meta's) AI group, the BERT language model is used to train a language model, ESM-1, on 86 billion amino acids across 250 million sequences. Like with ULMFiT (above), the idea is to use transfer learning: pre-training on a massive amount of data to teach a model something about the underlying logic of the language of DNA or proteins, in order to then be able to fine-tune the model for specific tasks. 
 
+**ProGen2: Exploring the Boundaries of Protein Language Models** [[github](https://github.com/salesforce/progen)][[preprint](https://arxiv.org/pdf/2206.13517.pdf)]
+
+Surprisingly, Salesforce has also been involved in protein language model research for quite some time. In this preprint they introduce a suite of protein language models that can be used for things like sequence fitness prediction and sequence generation. 
+
 **MSA Transformer** [[github](https://github.com/facebookresearch/esm)][[preprint](https://www.biorxiv.org/content/10.1101/2021.02.12.430858v3)]
 
 Here, the same team from Meta that introduced the ESM-1 model (above) show that a different type of transformer, which uses multiple sequence alignments (MSA) as input instead of protein sequences, can achieve even better results than a BERT-style transformer while using a smaller number of parameters. They introduce different forms of row and column attention to extract as much information from the MSAs as possible. The GitHub repo contains one trained version of the model, ESM-MSA-1b. 
