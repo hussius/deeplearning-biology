@@ -242,6 +242,9 @@ This work builds on Meta's protein language models (ESM-1 et al.; see above) and
 
 In modeling gene expression, the inputs are typically numerical values (integers or floats) estimating how much RNA is produced from a DNA template in a particular cell type or condition.
 
+**scPRINT: pre-training on 50 million cells allows robust gene network predictions** [[github](https://github.com/cantinilab/scPRINT)] [[bioRxiv](https://www.biorxiv.org/content/10.1101/2024.07.29.605556v1)]
+A Large Cell Model to predict gene-gene interactions and more at the level of the transcriptome. It is using novel encoding and decoding of RNAseq data to learn the regulatory mechanism from tens of millions of single cell RNAseq profiles.
+
 **Gene Expression Convolutions Using Gene Interaction Graphs** [[github](https://github.com/mila-iqia/gene-graph-conv)] [[arxiv](https://github.com/mila-iqia/gene-graph-conv)]
 They discuss how gene-gene interaction graphs (same pathway, protein-protein, co-expression, or research paper text association) can be used to impose a bias on a deep neural network model similar to the spatial bias imposed by convolutions on an image. They find this approach provides an advantage for particular tasks in a low data regime but is very dependent on the quality of the graph used. 
 
