@@ -432,6 +432,10 @@ From the abstract: "A fundamental problem in biomedical research is the low numb
 From the abstract: "Deep learning has emerged as a powerful methodology for predicting a variety of complex biological phenomena. However, its utility for biological discovery has so far been limited, given that generic deep neural networks provide little insight into the biological mechanisms that underlie a successful prediction. Here we demonstrate
 deep learning on biological networks, where every node has a molecular equivalent (such as a protein or gene) and every edge has a mechanistic interpretation (e.g., a regulatory interaction along a signaling pathway). With knowledge-primed neural networks (KPNNs), we exploit the ability of deep learning algorithms to assign meaningful weights to multi-layered networks for interpretable deep learning."
 
+**FlashDeconv: Atlas-scale spatial transcriptomics deconvolution** [[code](https://github.com/cafferychen777/flashdeconv)][[paper](https://doi.org/10.64898/2025.12.22.696108)]
+
+A high-performance method for cell type deconvolution in spatial transcriptomics using structure-preserving randomized sketching and graph neural regularization. Processes 1 million spots in ~3 minutes with linear O(N) scaling. Employs leverage-score importance sampling to preserve rare cell type signals, and uses sparse graph Laplacian regularization for spatially coherent predictions. Optimized for subcellular-resolution platforms (Visium HD, Stereo-seq, Xenium).
+
 ## Chemoinformatics and drug discovery <a name="chemo"></a>
 
 **Learning substructure invariance for out-of-distribution molecular representations** [[github](https://github.com/yangnianzu0515/MoleOOD)][[paper](https://openreview.net/forum?id=2nWUNTnFijm)] 
