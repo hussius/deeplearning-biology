@@ -511,6 +511,10 @@ The authors compare Restricted Boltzmann Machines (RBM) and Generative Adversari
 
 This weirdly-named paper addresses the frequently encountered problem in genomics where the number of features is much larger than the number of training examples. Here, it is addressed in the context of SNPs (single-nucleotide polymorphisms, genetic variations between individuals). The authors propose a new network parametrization that reduces the number of free parameters using a multi-task architecture which tries to learn a useful embedding of the input features.
 
+**dna-claude-analysis** [[github](https://github.com/shmlkv/dna-claude-analysis)]
+
+A personal genome analysis toolkit that uses LLM-powered variant interpretation to analyze raw DNA data (e.g. from 23andMe or AncestryDNA) across 17 categories including health risks, ancestry, pharmacogenomics, nutrition, sports/fitness, longevity, and more. Python scripts parse SNP data and generate structured reports by querying a language model for interpretation of each variant, producing a single-page HTML visualization of the findings.
+
 ## Systems biology<a name='sysbio'></a>
 
 **Using deep learning to model the hierarchical structure and function of a cell** [[web server](http://d-cell.ucsd.edu)][[paper](https://www.nature.com/articles/nmeth.4627/)]
