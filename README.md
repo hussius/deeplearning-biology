@@ -282,6 +282,10 @@ The authors use a two-step model to predict the effect of genetic variants on ge
 
 From the abstract: "We propose a novel approach based on the integration of multiple data modes, and show that our deep learning model, HE2RNA, can be trained to systematically predict RNA-Seq profiles from whole-slide images alone, without the need for expert annotation. HE2RNA is interpretable by design, opening up new opportunities for virtual staining. In fact, it provides virtual spatialization of gene expression,as validated by double-staining on an independent dataset. Moreover, the transcriptomic representation learned by HE2RNA can be transferred to improve predictive performance for other tasks, particularly for small datasets."
 
+**DeepSpot-M: a multimodal foundation model for transcriptome-wide virtual spatial transcriptomics from histology** [[github](https://github.com/ratschlab/DeepSpotM)][[huggingface](https://huggingface.co/ratschlab/DeepSpotM)][[preprint](https://doi.org/10.64898/2026.06.19.26356060)]
+
+Predicts transcriptome-wide spatial gene expression from a single 224x224 H&E histology tile. The tile is tokenised by a LoRA-adapted pathology foundation backbone (Midnight), and a cross-attention gene decoder lets each gene query attend to the resulting patch tokens. A gene router hypernetwork generates gene-specific output projections from frozen biological embeddings (Evo 2, Orthrus, ProtT5, scGPT, Apertus), so genes are queryable embeddings rather than fixed output units and the model spans the protein-coding transcriptome, including genes unseen during training. Applied to TCGA to build a virtual spatial transcriptomics atlas across 32 cancer types.
+
 ### Predicting enhancers and regulatory regions <a name='genomics_enhancers'></a>
 
 Here the inputs are typically “raw” DNA sequence, and convolutional networks (or layers) are often used to learn regularities within the sequence. Hat tip to [Melissa Gymrek](http://melissagymrek.com/science/2015/12/01/unlocking-noncoding-variation.html) for pointing out some of these.
