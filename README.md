@@ -286,6 +286,18 @@ From the abstract: "We propose a novel approach based on the integration of mult
 
 Predicts transcriptome-wide spatial gene expression from a single 224x224 H&E histology tile. The tile is tokenised by a LoRA-adapted pathology foundation backbone (Midnight), and a cross-attention gene decoder lets each gene query attend to the resulting patch tokens. A gene router hypernetwork generates gene-specific output projections from frozen biological embeddings (Evo 2, Orthrus, ProtT5, scGPT, Apertus), so genes are queryable embeddings rather than fixed output units and the model spans the protein-coding transcriptome, including genes unseen during training. Applied to TCGA to build a virtual spatial transcriptomics atlas across 32 cancer types.
 
+**Virtual spatial transcriptomics links kidney histopathology to disease-associated molecular programs** [[github](https://github.com/ratschlab/projects2026-kidney-kpmp-analysis)][[preprint](https://www.medrxiv.org/content/10.64898/2026.11.17.26368273v1)]
+
+Extends DeepSpot-M beyond oncology to non-cancerous kidney disease: transcriptome-wide virtual spatial transcriptomics from H&E for KPMP kidney biopsies, linking histopathology to molecular programs of kidney injury, repair, fibrosis and kidney function.
+
+**KPMP virtual spatial transcriptomics atlas** [[huggingface](https://huggingface.co/datasets/ratschlab/KPMP_virtual_spatial_transcriptomics_atlas)][[preprint](https://www.medrxiv.org/content/10.64898/2026.11.17.26368273v1)]
+
+DeepSpot-M predicted expression of 19,338 genes in each of ~5.46M spots across 1,534 H&E whole-slide images of kidney biopsies from 476 KPMP participants, with linked clinical and histopathological annotations (gated, CC BY-NC-SA 4.0).
+
+**KPMP Xenium virtual spatial transcriptomics** [[huggingface](https://huggingface.co/datasets/ratschlab/KPMP_Xenium_virtual_spatial_transcriptomics)][[preprint](https://www.medrxiv.org/content/10.64898/2026.11.17.26368273v1)]
+
+DeepSpot-M predicted expression of 19,338 genes in each of ~1.64M cells across 49 H&E sections of KPMP 10x Xenium kidney biopsies, together with the measured Xenium panel (gated, CC BY-NC-SA 4.0).
+
 ### Predicting enhancers and regulatory regions <a name='genomics_enhancers'></a>
 
 Here the inputs are typically “raw” DNA sequence, and convolutional networks (or layers) are often used to learn regularities within the sequence. Hat tip to [Melissa Gymrek](http://melissagymrek.com/science/2015/12/01/unlocking-noncoding-variation.html) for pointing out some of these.
